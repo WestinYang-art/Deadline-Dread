@@ -23,6 +23,7 @@ public class Shooting : MonoBehaviour
     public float proj2Degree;
     public float proj3Degree;
     private System.Random rFactor = new System.Random();
+    public Sprite sprite;
 
     // Start is called before the first frame update
     void Start()
@@ -52,22 +53,34 @@ public class Shooting : MonoBehaviour
                 timer = 0;
             }
         }
-    }
 
-    private void FixedUpdate()
-    {
         if (Input.GetMouseButtonDown(0) && canFire)
         {
             canFire = false;
             shootCalc();
-            bulletTransform1.transform.rotation = Quaternion.Euler(0, 0, proj1Degree);
-            Instantiate(bullet, bulletTransform1.position, bulletTransform1.transform.rotation);
-            bulletTransform2.transform.rotation = Quaternion.Euler(0, 0, proj2Degree);
-            Instantiate(bullet, bulletTransform2.position, bulletTransform2.transform.rotation);
-            bulletTransform3.transform.rotation = Quaternion.Euler(0, 0, proj3Degree);
-            Instantiate(bullet, bulletTransform3.position, bulletTransform3.transform.rotation);
-            transform.rotation = Quaternion.Euler(0, 0, rotZ);
+            GameObject bullet1 = new GameObject();
+            GameObject bullet2 = new GameObject();
+            GameObject bullet3 = new GameObject();
+            bullet1.AddComponent<BulletScript>();
+            bullet2.AddComponent<BulletScript>();
+            bullet3.AddComponent<BulletScript>();
+            bullet1.GetComponent<BulletScript>().Initialize(proj1Degree, gameObject.transform, 5, sprite);
+            bullet2.GetComponent<BulletScript>().Initialize(proj2Degree, gameObject.transform, 5, sprite);
+            bullet3.GetComponent<BulletScript>().Initialize(proj3Degree, gameObject.transform, 5, sprite);
+
+            /*transform.rotation = Quaternion.Euler(0, 0, proj1Degree);
+            Instantiate(bullet, bulletTransform1.position, Quaternion.identity);
+            transform.rotation = Quaternion.Euler(0, 0, proj2Degree);
+            Instantiate(bullet, bulletTransform2.position, Quaternion.identity);
+            transform.rotation = Quaternion.Euler(0, 0, proj3Degree);
+            Instantiate(bullet, bulletTransform3.position, Quaternion.identity);
+            transform.rotation = Quaternion.Euler(0, 0, rotZ);*/
         }
+    }
+
+    private void FixedUpdate()
+    {
+
     }
 
     private void degCalc()
@@ -124,5 +137,18 @@ public class Shooting : MonoBehaviour
         {
             proj3Degree = tNegDegrees + proj3Degree;
         }
+    }
+
+    public float getProj1Degree()
+    {
+        return proj1Degree;
+    }
+    public float getProj2Degree()
+    {
+        return proj2Degree;
+    }
+    public float getProj3Degree()
+    {
+        return proj3Degree;
     }
 }
