@@ -1,58 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    GameObject target;
-    public float speed;
-    Rigidbody2D bulletRB;
-    private bool isDestroyed = false;
-
-    void OnEnable()  // Use OnEnable instead of Start to reuse the bullet from the pool
+    private Vector3 mousePos;
+    private Camera mainCam;
+    private Rigidbody2D rb;
+    public float force;
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        bulletRB = GetComponent<Rigidbody2D>();
-
-        // Reset the destroyed flag when the bullet is reused
-        isDestroyed = false;
-
-        // Check if Rigidbody2D is assigned
-        if (bulletRB == null)
-        {
-            Debug.LogError("Rigidbody2D is missing on the bullet.");
-        }
-
-        target = GameObject.FindGameObjectWithTag("Player");
-
-        // Check if target (Player) exists
-        if (target != null)
-        {
-            Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
-            bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
-        }
-        else
-        {
-            bulletRB.velocity = transform.right * speed;  // Default direction
-        }
-
-        // Instead of destroying the bullet, we deactivate it after 2 seconds
-        Invoke("DeactivateBullet", 2f);
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
+        rb = GetComponent<Rigidbody2D>();
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePos - transform.position;
+        Vector3 rotation = transform.position - mousePos;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
     }
 
-    void DeactivateBullet()
+    // Update is called once per frame
+    void Update()
     {
-        if (!isDestroyed)
-        {
-            isDestroyed = true;
-            gameObject.SetActive(false);  // Deactivate instead of destroying
-        }
-    }
-
-    // Optional: Handle collisions
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!isDestroyed)
-        {
-            isDestroyed = true;
-            gameObject.SetActive(false);  // Deactivate instead of destroying
-        }
+        
     }
 }

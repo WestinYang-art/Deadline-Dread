@@ -1,0 +1,121 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class PlayerMovement : MonoBehaviour
+{
+    public float maxSpeed;
+    public float acceleration;
+    public Rigidbody2D rb;
+    private float horizontal;
+    private float vertical;
+    private Animator animator;
+
+    
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        getInput();
+    }
+
+    private void FixedUpdate()
+    {
+        move();
+        lookPretty();
+    }
+
+    private void getInput()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical"); ;
+    }
+
+    private void lookPretty()
+    {
+        float horiz = Input.GetAxis("Horizontal");
+        float vert = Input.GetAxis("Vertical");
+        bool sideways = Math.Abs(horiz) > Math.Abs(vert);
+        bool moving = Math.Max(Math.Abs(horiz), Math.Abs(vert)) > 0.01f;
+        bool upways = vert > 0;
+
+        animator.SetBool("sideways", sideways);
+        animator.SetBool("moving", moving);
+        animator.SetBool("upways", upways);
+
+        if(horiz>0 && sideways) transform.localScale = new Vector3(-1, 1, 1);
+        else transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    private void move()
+    {
+        if (rb.velocity.x == 0 && (horizontal == -1 || horizontal == 1))
+        {
+            rb.velocity = new Vector2(horizontal * acceleration, rb.velocity.y);
+        }
+        else if (horizontal == -1 && rb.velocity.x > (0 - maxSpeed))
+        {
+            rb.velocity = new Vector2(rb.velocity.x - acceleration, rb.velocity.y);
+        }
+        else if (horizontal == 1 && rb.velocity.x < maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x + acceleration, rb.velocity.y);
+        }
+
+        if (rb.velocity.y == 0 && (vertical == -1 || vertical == 1))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, vertical * acceleration);
+        }
+        else if (vertical == -1 && rb.velocity.y > (0 - maxSpeed))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y - acceleration);
+        }
+        else if (vertical == 1 && rb.velocity.y < maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + acceleration);
+        }
+
+        if (horizontal == 0)
+        {
+            if (rb.velocity.x > 0 && rb.velocity.x >= acceleration)
+            {
+                rb.velocity = new Vector2(rb.velocity.x - (acceleration / 2), rb.velocity.y);
+            }
+            else if (rb.velocity.x < 0 && rb.velocity.x <= 0 - acceleration)
+            {
+                rb.velocity = new Vector2(rb.velocity.x + (acceleration / 2), rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+        }
+
+        if (vertical == 0)
+        {
+            if (rb.velocity.y > 0 && rb.velocity.y >= acceleration)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y - (acceleration / 2));
+            }
+            else if (rb.velocity.y < 0 && rb.velocity.y <= 0 - acceleration)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + (acceleration / 2));
+            }
+            else
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
