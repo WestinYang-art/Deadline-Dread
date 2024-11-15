@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafd929cfaae9f7419670154a90828ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
+  mainCam: {fileID: 1545265322}
   bullet: {fileID: 0}
   bulletTransform: {fileID: 0}
   canFire: 0

@@ -68,6 +68,7 @@ public class DiseaseSquare : MonoBehaviour
             int maxY = Math.Min(y+1, grid.getHeight()-1);
 
             System.Random r = new System.Random();
+            
             int nX = r.Next(minX, maxX);
             int nY = r.Next(minY, maxY);
             Debug.Log("Square " + x + ", " + y + " trying to infect square " + nX + ", " + nY);
