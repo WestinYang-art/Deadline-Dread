@@ -64,9 +64,9 @@ public class Shooting : MonoBehaviour
             bullet1.AddComponent<BulletScript>();
             bullet2.AddComponent<BulletScript>();
             bullet3.AddComponent<BulletScript>();
-            bullet1.GetComponent<BulletScript>().Initialize(proj1Degree, gameObject.transform, 5, sprite);
-            bullet2.GetComponent<BulletScript>().Initialize(proj2Degree, gameObject.transform, 5, sprite);
-            bullet3.GetComponent<BulletScript>().Initialize(proj3Degree, gameObject.transform, 5, sprite);
+            bullet1.GetComponent<BulletScript>().Initialize(proj1Degree, gameObject.transform, 20, sprite);
+            bullet2.GetComponent<BulletScript>().Initialize(proj2Degree, gameObject.transform, 20, sprite);
+            bullet3.GetComponent<BulletScript>().Initialize(proj3Degree, gameObject.transform, 20, sprite);
 
             /*transform.rotation = Quaternion.Euler(0, 0, proj1Degree);
             Instantiate(bullet, bulletTransform1.position, Quaternion.identity);

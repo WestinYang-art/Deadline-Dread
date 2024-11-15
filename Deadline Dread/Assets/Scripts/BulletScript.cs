@@ -39,6 +39,8 @@ public class BulletScript : MonoBehaviour
         gameObject.AddComponent<SpriteRenderer>();
         gameObject.AddComponent<Rigidbody2D>();
         gameObject.AddComponent<BoxCollider2D>();
+        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.0f, 1.0f);
+
         gameObject.tag = "Bullet";
         this.force = force;
         this.position = position;
@@ -48,7 +50,7 @@ public class BulletScript : MonoBehaviour
         float x = position.position.x;
         float y = position.position.y;
         gameObject.GetComponent<Rigidbody2D>().transform.position = new Vector3(x, y, 0);
-        movement = Quaternion.Euler(0, 0, (rotation - 90)) * Vector2.up;
+        movement = Quaternion.Euler(0, 0, (rotation - 90)) * Vector2.up * force;
         gameObject.GetComponent<Rigidbody2D>().velocity = movement;
     }
 }
