@@ -10,12 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private float horizontal;
     private float vertical;
-    private Animator animator;
+    //private Animator animator;
 
     
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         move();
-        lookPretty();
+        //lookPretty();
     }
 
     private void getInput()
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical"); ;
     }
 
-    private void lookPretty()
+    /*private void lookPretty()
     {
         float horiz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(horiz>0 && sideways) transform.localScale = new Vector3(-1, 1, 1);
         else transform.localScale = new Vector3(1, 1, 1);
-    }
+    }*/
 
     private void move()
     {
