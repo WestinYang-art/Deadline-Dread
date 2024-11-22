@@ -11,7 +11,7 @@ public class DiseaseSquare : MonoBehaviour
     int x;
     int y;
     float cellSize;
-    float spreadSpeed;
+    public float spreadSpeed;
     
     public void Initialize(DiseaseGrid g, int status, int x, int y, float cellSize, float spreadSpeed)
     {
