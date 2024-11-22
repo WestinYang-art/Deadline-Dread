@@ -379,10 +379,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2118291483694386973, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6494563487607616644, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1621806085}
   m_SourcePrefab: {fileID: 100100000, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
 --- !u!1 &1231654092
 GameObject:
@@ -433,6 +437,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1621806083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6494563487607616644, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+  m_PrefabInstance: {fileID: 124075271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621806085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621806083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36d98027970a744badb17c1cebe737d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 77704405}
+  canFire: 0
+  timeBetweenFiring: 0.1
+  deathTimer: 1.5
+  force: 4
+  cone: 15
+  bulletCount: 5
+  maxAmmo: 5
+  ammoCount: 5
+  ammoRegen: 1
+  sprite: {fileID: 21300000, guid: a973f04d8826a49418c884c14c475f50, type: 3}
+  fireMode: 1
 --- !u!1 &1898088069
 GameObject:
   m_ObjectHideFlags: 0
