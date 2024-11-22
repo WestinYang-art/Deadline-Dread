@@ -7,7 +7,8 @@ public class Foam_Launcher : MonoBehaviour
     public Camera mainCam;
     private Vector3 mousePos;
     public bool canFire;
-    private float timer;
+    private float bulletTimer;
+    private float fireTimer;
     public float timeBetweenFiring;
     public float deathTimer;
     public float force;
@@ -46,11 +47,20 @@ public class Foam_Launcher : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
-        timer += Time.deltaTime;
-        if (timer > ammoRegen)
+        if (!canFire)
         {
-            canFire = true;
-            timer = 0;
+            fireTimer += Time.deltaTime;
+            if (fireTimer > timeBetweenFiring || ammoCount == 1)
+            {
+                canFire = true;
+                fireTimer = 0;
+            }
+        }
+
+        bulletTimer += Time.deltaTime;
+        if (bulletTimer > ammoRegen)
+        {
+            bulletTimer = 0;
             if (ammoCount < maxAmmo)
             {
                 ammoCount += 1;
@@ -67,10 +77,7 @@ public class Foam_Launcher : MonoBehaviour
                 bullet.AddComponent<BulletScript>();
                 bullet.GetComponent<BulletScript>().Initialize(projDegree, gameObject.transform, force, sprite, deathTimer);
             }
-            if (ammoCount <= 0)
-            {
-                canFire = false;
-            }
+            canFire = false;
         }
     }
 
