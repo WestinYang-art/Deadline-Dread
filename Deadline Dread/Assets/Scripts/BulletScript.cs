@@ -41,6 +41,7 @@ public class BulletScript : MonoBehaviour
         gameObject.AddComponent<BoxCollider2D>();
         gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.0f, 1.0f);
 
+        gameObject.layer = LayerMask.NameToLayer("Bullet");
         gameObject.tag = "Bullet";
         this.force = force;
         this.position = position;

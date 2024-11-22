@@ -584,6 +584,22 @@ PrefabInstance:
       propertyPath: timeBetweenFiring
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 3556332327493108349, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672260276405790090, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      propertyPath: dashTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672260276405790090, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672260276405790090, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      propertyPath: multiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5617284867579135372, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
       propertyPath: m_Name
       value: Player

@@ -7,9 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float maxSpeed;
     public float acceleration;
+    public float multiplier;
     public Rigidbody2D rb;
     private float horizontal;
     private float vertical;
+    private bool canDash = true;
+    private float dashTime;
     //private Animator animator;
 
     
@@ -20,19 +23,29 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        getInput();
+        if (Input.GetButtonDown("Jump") && canDash)
+        {
+            rb.velocity = new Vector2(horizontal * acceleration * multiplier, vertical * acceleration * multiplier);
+            canDash = false;
+            dashTime = Time.fixedDeltaTime;
+        }
+        else if (dashTime + 2 > Time.fixedDeltaTime)
+        {
+            canDash = true;
+        }
     }
 
     private void FixedUpdate()
     {
         move();
+        getInput();
         //lookPretty();
     }
 
     private void getInput()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical"); ;
+        vertical = Input.GetAxisRaw("Vertical");
     }
 
     /*private void lookPretty()
