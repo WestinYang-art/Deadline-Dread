@@ -268,6 +268,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2118291483694386973, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      propertyPath: cone
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118291483694386973, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      propertyPath: force
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118291483694386973, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21300000, guid: a973f04d8826a49418c884c14c475f50, type: 3}
@@ -275,6 +283,10 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 77704405}
+    - target: {fileID: 2118291483694386973, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
+      propertyPath: deathTimer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2118291483694386973, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
       propertyPath: timeBetweenFiring
       value: 0.1
