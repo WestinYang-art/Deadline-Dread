@@ -47,7 +47,7 @@ public class Foam_Launcher : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
-        if (!canFire)
+        if (!canFire && ammoCount > 0)
         {
             fireTimer += Time.deltaTime;
             if (fireTimer > timeBetweenFiring || ammoCount == 1)
