@@ -18,6 +18,9 @@ public class DiseaseGrid
     private int[,] gridStatus;
     private GameObject[,] grid;
 
+    //part of loss check. should we move loss check elsewhere?
+    public bool winning;
+
     public DiseaseGrid(int width, int height, float cellSize, float spreadSpeed)
     {
         this.width = width;
@@ -26,6 +29,7 @@ public class DiseaseGrid
         this.spreadSpeed = spreadSpeed;
         gridStatus = new int[width,height];
         grid = new GameObject[width,height];
+        winning = true;
         InitializeGrid();
     }
 
@@ -47,19 +51,20 @@ public class DiseaseGrid
         if(x >= 0 && x < width && y >= 0 && y < height)
         {
             grid[x,y].GetComponent<DiseaseSquare>().SetStatus(val);
+            gridStatus[x,y] = val;
         }
         else Debug.Log("Square " + x + ", " + y + " is out of bounds.");
     }
     
-    public GameObject GetSquareStatus(int x, int y)
+    public int GetSquareStatus(int x, int y)
     {
         if(x >= 0 && x < width && y >= 0 && y < height)
         {
-            return grid[x,y];
+            return gridStatus[x,y];
         }
         else{
             Debug.Log("Square " + x + ", " + y + " is out of bounds. Returning 0,0");
-            return grid[0,0];
+            return gridStatus[0,0];
         }
     }
 
@@ -74,6 +79,28 @@ public class DiseaseGrid
         {
             SetSquareStatus(0, i, DEPRESSED);
             SetSquareStatus(width-1,i,DEPRESSED);
+        }
+    }
+
+    //checks for loss & triggers scene switch for now. we may want to have loss actually be triggered elsewhere
+    public void CheckLoss()
+    {
+        bool lost = true;
+
+        //check if any square is healthy
+        for(int x = 0; x < width; x++)
+        {
+            for(int y = 0; y < height; y++)
+            {
+                if(gridStatus[x,y] == HEALTHY) lost = false;
+            }
+        }
+
+        if(lost)
+        {
+            Debug.Log("we lost!!!");
+            winning=false;
+            SceneSwitchManager.SwitchToMenu();
         }
     }
 

@@ -46,15 +46,18 @@ public class DiseaseSquare : MonoBehaviour
     {
         if(other.CompareTag("Bullet"))
         {
-            SetStatus(DiseaseGrid.HEALTHY);
             //making square healthy
+            SetStatus(DiseaseGrid.HEALTHY);
+
+            //add to score (currently adding 2)
+            ScoreCalculation.AddScore(2);
         }
     }
 
     IEnumerator Spread()
     {
         yield return new WaitForSeconds(spreadSpeed);
-        if(status == DiseaseGrid.DEPRESSED)
+        if(status == DiseaseGrid.DEPRESSED && grid.winning)
         {
             //pick a random neighbor
             /*
@@ -75,6 +78,9 @@ public class DiseaseSquare : MonoBehaviour
 
             //spread da disease. will effectively do nothing when trying to spread to an already depressed target
             grid.SetSquareStatus(nX, nY, DiseaseGrid.DEPRESSED);
+
+            //currently, loss is checked in disease grid itself. this is kinda messy, we might want to change
+            grid.CheckLoss();
         }
         StartCoroutine(Spread());
     }
