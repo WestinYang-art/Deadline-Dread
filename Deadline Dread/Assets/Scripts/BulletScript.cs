@@ -12,6 +12,9 @@ public class BulletScript : MonoBehaviour
     public float rotation;
     private Transform position;
     public Vector2 movement;
+    public float deathTimer;
+    public float acceptance;
+    public float testingTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +24,17 @@ public class BulletScript : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;*/
+        acceptance = testingTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        testingTime += Time.deltaTime;
+        if (acceptance + deathTimer < testingTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Initialize(float rotation, Transform position)
@@ -34,12 +42,13 @@ public class BulletScript : MonoBehaviour
 
     }
 
-    public void Initialize(float rotation, Transform position, float force, Sprite sprite)
+    public void Initialize(float rotation, Transform position, float force, Sprite sprite, float timeBeforeDestroy)
     {
         gameObject.AddComponent<SpriteRenderer>();
         gameObject.AddComponent<Rigidbody2D>();
         gameObject.AddComponent<BoxCollider2D>();
         gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1.0f, 1.0f);
+        this.deathTimer = timeBeforeDestroy;
 
         gameObject.layer = LayerMask.NameToLayer("Bullet");
         gameObject.tag = "Bullet";

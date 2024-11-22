@@ -7,23 +7,27 @@ public class Shooting : MonoBehaviour
     public Camera mainCam;
     private Vector3 mousePos;
     public GameObject bullet;
-    public Transform bulletTransform1;
-    public Transform bulletTransform2;
-    public Transform bulletTransform3;
+    //public Transform bulletTransform1;
+    //public Transform bulletTransform2;
+    //public Transform bulletTransform3;
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
-    public float rotZ;
+    public float deathTimer;
+    public float force;
+    private float rotZ;
     private Vector3 rotation;
-    public float negDegrees;
-    public float posDegrees;
-    public float tNegDegrees;
-    public float tPosDegrees;
-    public float proj1Degree;
-    public float proj2Degree;
-    public float proj3Degree;
+    public float cone;
+    private float negDegrees;
+    private float posDegrees;
+    private float tNegDegrees;
+    private float tPosDegrees;
+    private float proj1Degree;
+    private float proj2Degree;
+    private float proj3Degree;
     private System.Random rFactor = new System.Random();
     public Sprite sprite;
+    public bool fireMode;
 
     // Start is called before the first frame update
     void Start()
@@ -64,9 +68,9 @@ public class Shooting : MonoBehaviour
             bullet1.AddComponent<BulletScript>();
             bullet2.AddComponent<BulletScript>();
             bullet3.AddComponent<BulletScript>();
-            bullet1.GetComponent<BulletScript>().Initialize(proj1Degree, gameObject.transform, 20, sprite);
-            bullet2.GetComponent<BulletScript>().Initialize(proj2Degree, gameObject.transform, 20, sprite);
-            bullet3.GetComponent<BulletScript>().Initialize(proj3Degree, gameObject.transform, 20, sprite);
+            bullet1.GetComponent<BulletScript>().Initialize(proj1Degree, gameObject.transform, force, sprite, deathTimer);
+            bullet2.GetComponent<BulletScript>().Initialize(proj2Degree, gameObject.transform, force, sprite, deathTimer);
+            bullet3.GetComponent<BulletScript>().Initialize(proj3Degree, gameObject.transform, force, sprite, deathTimer);
 
             /*transform.rotation = Quaternion.Euler(0, 0, proj1Degree);
             Instantiate(bullet, bulletTransform1.position, Quaternion.identity);
@@ -85,9 +89,9 @@ public class Shooting : MonoBehaviour
 
     private void degCalc()
     {
-        negDegrees = rotZ - 35;
+        negDegrees = rotZ - cone;
 
-        posDegrees = rotZ + 35;
+        posDegrees = rotZ + cone;
 
         if (negDegrees > 180)
         {
@@ -110,9 +114,9 @@ public class Shooting : MonoBehaviour
 
     private void shootCalc()
     {
-        proj1Degree = rFactor.Next(0, 70);
-        proj2Degree = rFactor.Next(0, 70);
-        proj3Degree = rFactor.Next(0, 70);
+        proj1Degree = rFactor.Next(0, (int) cone * 2);
+        proj2Degree = rFactor.Next(0, (int)cone * 2);
+        proj3Degree = rFactor.Next(0, (int)cone * 2);
         if (proj1Degree + tNegDegrees > 180)
         {
             proj1Degree = 0 - (180 + (180 - (proj1Degree + tNegDegrees)));
