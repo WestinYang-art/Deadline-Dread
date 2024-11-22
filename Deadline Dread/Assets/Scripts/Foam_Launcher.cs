@@ -23,7 +23,7 @@ public class Foam_Launcher : MonoBehaviour
     public float bulletCount;
     public int maxAmmo;
     public int ammoCount;
-    public int ammoRegen;
+    public float ammoRegen;
     private System.Random rFactor = new System.Random();
     public Sprite sprite;
     public bool fireMode;

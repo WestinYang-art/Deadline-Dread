@@ -100,7 +100,6 @@ public class DiseaseGrid
         {
             Debug.Log("we lost!!!");
             winning=false;
-            SceneSwitchManager.SwitchToMenu();
         }
     }
 

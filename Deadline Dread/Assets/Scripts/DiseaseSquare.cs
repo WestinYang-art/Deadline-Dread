@@ -44,20 +44,20 @@ public class DiseaseSquare : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Bullet"))
+        if(other.CompareTag("Bullet") && grid.winning)
         {
+            if(status == DiseaseGrid.DEPRESSED) ScoreCalculation.AddScore(2);
             //making square healthy
             SetStatus(DiseaseGrid.HEALTHY);
 
-            //add to score (currently adding 2)
-            ScoreCalculation.AddScore(2);
+            
         }
     }
 
     IEnumerator Spread()
     {
         yield return new WaitForSeconds(spreadSpeed);
-        if(status == DiseaseGrid.DEPRESSED && grid.winning)
+        if(status == DiseaseGrid.DEPRESSED)
         {
             //pick a random neighbor
             /*
@@ -80,7 +80,6 @@ public class DiseaseSquare : MonoBehaviour
             grid.SetSquareStatus(nX, nY, DiseaseGrid.DEPRESSED);
 
             //currently, loss is checked in disease grid itself. this is kinda messy, we might want to change
-            grid.CheckLoss();
         }
         StartCoroutine(Spread());
     }
