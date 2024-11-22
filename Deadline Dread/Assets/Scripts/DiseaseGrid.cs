@@ -104,6 +104,18 @@ public class DiseaseGrid
         }
     }
 
+    public void SetAllSpeed(float newSpeed)
+    {
+        for(int x = 0; x < width; x++)
+        {
+            for(int y = 0; y < height; y++)
+            {
+                grid[x,y].GetComponent<DiseaseSquare>().spreadSpeed = newSpeed;
+            }
+        }
+        spreadSpeed = newSpeed;
+    }
+
     public Vector3 GetWorldPosition(int x, int y)
     {
         return new Vector3(x, y) * cellSize;
@@ -111,4 +123,6 @@ public class DiseaseGrid
 
     public int getWidth(){ return width; }
     public int getHeight(){ return height; }
+    
+    public float getSpreadSpeed(){ return spreadSpeed; }
 }

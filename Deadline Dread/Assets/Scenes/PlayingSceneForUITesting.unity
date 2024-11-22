@@ -384,7 +384,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
---- !u!1 &1636890705
+--- !u!1 &1231654092
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,37 +392,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1636890707}
-  - component: {fileID: 1636890706}
+  - component: {fileID: 1231654094}
+  - component: {fileID: 1231654093}
   m_Layer: 0
-  m_Name: GridTest
+  m_Name: DiseaseGridManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1636890706
+--- !u!114 &1231654093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636890705}
+  m_GameObject: {fileID: 1231654092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045535166f131a54994d7819e79a28c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1aba7fb819503c7498df836833ed13b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1636890707
+  width: 10
+  height: 10
+  cellSize: 1
+  initialSpreadSpeed: 1
+  rampUpRate: 1.3
+--- !u!4 &1231654094
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636890705}
+  m_GameObject: {fileID: 1231654092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7399998, y: 4.7, z: 0}
+  m_LocalPosition: {x: 325.50803, y: 282.93207, z: -2.3317301}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -478,6 +483,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 77704406}
   - {fileID: 124075271}
-  - {fileID: 1636890707}
   - {fileID: 1898088071}
   - {fileID: 33290710}
+  - {fileID: 1231654094}
