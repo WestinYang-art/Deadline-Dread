@@ -10,11 +10,12 @@ public class DiseaseGridManager : MonoBehaviour
     [SerializeField] float cellSize;
     [SerializeField] float initialSpreadSpeed;
     [SerializeField] float rampUpRate;
+    [SerializeField] Sprite[] visuals;
 
     // Start is called before the first frame update
     void Start()
     {
-        ds = new DiseaseGrid(width, height, cellSize, initialSpreadSpeed);
+        ds = new DiseaseGrid(width, height, cellSize, initialSpreadSpeed, visuals);
         ds.DiseaseTheEdges();
         StartCoroutine(ReDisease());
         StartCoroutine(SpreadRampUp());

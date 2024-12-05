@@ -20,8 +20,9 @@ public class DiseaseGrid
 
     //part of loss check. should we move loss check elsewhere?
     public bool winning;
+    public Sprite[] visuals;
 
-    public DiseaseGrid(int width, int height, float cellSize, float spreadSpeed)
+    public DiseaseGrid(int width, int height, float cellSize, float spreadSpeed, Sprite[] visuals)
     {
         this.width = width;
         this.height = height;
@@ -30,6 +31,7 @@ public class DiseaseGrid
         gridStatus = new int[width,height];
         grid = new GameObject[width,height];
         winning = true;
+        this.visuals = visuals;
         InitializeGrid();
     }
 
