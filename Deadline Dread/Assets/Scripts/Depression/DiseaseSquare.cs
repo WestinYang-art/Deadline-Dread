@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
-using Random = UnityEngine.Random;
 
 public class DiseaseSquare : MonoBehaviour
 {
@@ -64,6 +63,13 @@ public class DiseaseSquare : MonoBehaviour
         yield return new WaitForSeconds(spreadSpeed);
         if(status == DiseaseGrid.DEPRESSED)
         {
+            System.Random r = new System.Random();
+            //become depressioned
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = grid.visuals[ (int) r.Next(0, grid.visuals.Length)];
+            gameObject.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Sliced;
+            gameObject.GetComponent<SpriteRenderer>().size = new Vector2(cellSize*1.5f, cellSize*1.5f);
+
             //pick a random neighbor
             /*
                 OPTIONS:
@@ -75,17 +81,14 @@ public class DiseaseSquare : MonoBehaviour
             int minY = Math.Max(0, y-1);
             int maxY = Math.Min(y+1, grid.getHeight()-1);
 
-            System.Random r = new System.Random();
+            
 
-            int nX = r.Next(minX, maxX);
-            int nY = r.Next(minY, maxY);
+            int nX = r.Next(minX, maxX+1);
+            int nY = r.Next(minY, maxY+1);
             Debug.Log("Square " + x + ", " + y + " trying to infect square " + nX + ", " + nY);
 
-            //spread da disease. will effectively do nothing when trying to spread to an already depressed target
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            gameObject.GetComponent<SpriteRenderer>().sprite = grid.visuals[ (int) Random.Range(0, grid.visuals.Length)];
-            gameObject.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Sliced;
-            gameObject.GetComponent<SpriteRenderer>().size = new Vector2(cellSize*1.5f, cellSize*1.5f);
+            //spread da disease. will effectively do nothing when trying to spread to an already depressed target          
+
             grid.SetSquareStatus(nX, nY, DiseaseGrid.DEPRESSED);
 
             //currently, loss is checked in disease grid itself. this is kinda messy, we might want to change
