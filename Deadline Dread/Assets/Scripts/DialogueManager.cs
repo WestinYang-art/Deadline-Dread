@@ -93,28 +93,11 @@ public class DialogueManager : MonoBehaviour
             {
                 case SPEAKER_TAG:
                     //switch speakers
-                    StartCoroutine(SwitchSpeaker(tagVal));
+                    break;
                 default:
                     Debug.Log("bro tf these tags");
                     break;
             }
          }
-    }
-
-    //very hard-coded...
-    private IEnumerator SwitchSpeaker(string speaker)
-    {
-        if(speaker == "mc")
-        {
-
-        }
-        else if(speaker == "boss")
-        {
-
-        }
-        else
-        {
-            Debug.Log("bro who tf is this speaker");
-        }
     }
 }
