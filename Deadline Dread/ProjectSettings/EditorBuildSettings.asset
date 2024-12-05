@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayingSceneForUITesting.unity
     guid: d4cdbf5fc84595c498fc5e5d1bcd40a2
+  - enabled: 1
+    path: Assets/Scenes/RoundEnding.unity
+    guid: 59efc0070665ee6409e3f6e89342a25e
   m_configObjects: {}

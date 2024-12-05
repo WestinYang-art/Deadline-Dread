@@ -117,6 +117,17 @@ public class DiseaseGrid
         spreadSpeed = newSpeed;
     }
 
+    public void KillAll()
+    {
+        for(int x = 0; x < width; x++)
+        {
+            for(int y = 0; y<height; y++)
+            {
+                GameObject.Destroy(grid[x,y]);
+            }
+        }
+    }
+
     public Vector3 GetWorldPosition(int x, int y)
     {
         return new Vector3(x, y) * cellSize;
