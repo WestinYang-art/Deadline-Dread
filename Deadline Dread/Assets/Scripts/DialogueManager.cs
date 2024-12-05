@@ -7,12 +7,15 @@ using Ink.Runtime;
 public class DialogueManager : MonoBehaviour
 {
     private static DialogueManager instance;
-    [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private GameObject mc;
-    [SerializeField] private GameObject boss;
-    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject bossPanel;
+    [SerializeField] private GameObject mcPanel;
+    [SerializeField] private TextMeshProUGUI bossText;
+    [SerializeField] private TextMeshProUGUI mcText;
     private Story currentStory;
     public bool dialogueIsPlaying {get; private set;}
+    private string currentSpeaker;
+    private const string BOSS = "boss";
+    private const string MC = "mc"; 
 
     private const string SPEAKER_TAG = "speaker";
 
@@ -33,7 +36,8 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        bossPanel.SetActive(false);
+        mcPanel.SetActive(false);
     }
 
     private void Update()
@@ -54,7 +58,6 @@ public class DialogueManager : MonoBehaviour
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
-        dialoguePanel.SetActive(true);
         ContinueStory();
     }
 
@@ -62,15 +65,32 @@ public class DialogueManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying=false;
-        dialoguePanel.SetActive(false);
-        dialogueText.text = "";
+        bossPanel.SetActive(false);
+        bossText.text = "";
+        mcPanel.SetActive(false);
+        mcText.text = "";
     }
 
     private void ContinueStory()
     {
         if(currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
+            HandleTags(currentStory.currentTags);
+            if(currentSpeaker == BOSS)
+            {
+                bossPanel.SetActive(true);
+                bossText.text = currentStory.Continue();
+                mcPanel.SetActive(false);
+                mcText.text = "";
+            }
+            else
+            {
+                //we're just going to ASSUME that if it's not the boss, it's the MC. FOR NOW.
+                mcPanel.SetActive(true);
+                mcText.text = currentStory.Continue();
+                bossPanel.SetActive(false);
+                bossText.text = "";
+            }
         }
         else
         {
@@ -92,7 +112,12 @@ public class DialogueManager : MonoBehaviour
             switch(tagKey)
             {
                 case SPEAKER_TAG:
-                    //switch speakers
+                    if(tagVal == BOSS || tagVal == MC) currentSpeaker = tagVal;
+                    else
+                    {
+                        Debug.Log("unknown speaker");
+                        StartCoroutine(ExitDialogueMode());
+                    }
                     break;
                 default:
                     Debug.Log("bro tf these tags");
