@@ -90,6 +90,6 @@ public class SceneSwitchManager : MonoBehaviour
         currentDeadlineReached = false;
         deadlineNum = 0;
         daysLeft = 2;
-        deadlineGoals = new int[] {100, 200, 300};
+        deadlineGoals = new int[] {2000, 2500, 3000};
     }
 }
