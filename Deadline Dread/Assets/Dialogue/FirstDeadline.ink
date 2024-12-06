@@ -1,6 +1,6 @@
 OK, i finished the first deadline... #speaker:boss
-FINALLY
-YOU'RE ALREADY 43 SECONDS BEHIND SCHEDULE 
+FINALLY!
+YOU'RE ALREADY 43 SECONDS BEHIND SCHEDULE! 
 GET IT TOGETHER! #speaker:mc
 yes, sir...
 um. what's the overtime policy? #speaker:boss

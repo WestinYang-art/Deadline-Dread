@@ -891,7 +891,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 455660245}
         m_TargetAssemblyTypeName: SceneSwitchManager, Assembly-CSharp
-        m_MethodName: SwitchToMenu
+        m_MethodName: SwitchToDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
