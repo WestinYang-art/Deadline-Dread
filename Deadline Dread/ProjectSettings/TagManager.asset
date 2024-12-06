@@ -5,17 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Collectible
+  - Map
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - mapLayer
   - Water
   - UI
+  - Enemy
+  - Player
   - Bullet
-  - 
-  - 
-  - 
+  - Collectible
   - 
   - 
   - 
@@ -41,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: map
+    uniqueID: 974259697
+    locked: 0
+  - name: collectible
+    uniqueID: 3611295139
+    locked: 0
+  - name: bullet
+    uniqueID: 981978561
+    locked: 0
+  - name: player
+    uniqueID: 792430273
     locked: 0

@@ -24,14 +24,20 @@ public class Foam_Launcher : MonoBehaviour
     public int maxAmmo;
     public int ammoCount;
     public float ammoRegen;
+    private int statMaxAmmo;
+    private float statAmmoRegen;
     private System.Random rFactor = new System.Random();
     public Sprite sprite;
     public bool fireMode;
+    public float godTime;
+    public bool buffDelay;
+    public float buffTime;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        statAmmoRegen = ammoRegen;
+        statMaxAmmo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -47,6 +53,24 @@ public class Foam_Launcher : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
+        if (buffDelay == true)
+        {
+            godTime += Time.deltaTime;
+            ammoRegen = .01f;
+            maxAmmo = 999;
+        }
+        if (buffDelay == true && godTime >= buffTime)
+        {
+            ammoRegen = statAmmoRegen;
+            maxAmmo = statMaxAmmo;
+            if (ammoCount >= maxAmmo)
+            {
+                ammoCount = maxAmmo;
+            }
+            godTime = 0;
+            buffDelay = false;
+        }
+        
         if (!canFire && ammoCount > 0)
         {
             fireTimer += Time.deltaTime;
@@ -127,5 +151,66 @@ public class Foam_Launcher : MonoBehaviour
     public float getProjDegree()
     {
         return projDegree;
+    }
+
+    public void setProjDegree(float projDegree)
+    {
+        this.projDegree = projDegree;
+    }
+
+    public float getTimeBetweenFiring()
+    {
+        return timeBetweenFiring;
+    }
+
+    public void setTimeBetweenFiring(float timeBetweenFiring)
+    {
+        this.timeBetweenFiring = timeBetweenFiring;
+    }
+
+    public float getAmmoRegen()
+    {
+        return ammoRegen;
+    }
+
+    public void setAmmoRegen(float ammoRegen)
+    {
+        this.ammoRegen = ammoRegen;
+    }
+
+    public float getCone()
+    {
+        return cone;
+    }
+
+    public void setCone(float cone)
+    {
+        this.cone = cone;
+    }
+
+    public float getBulletCount()
+    {
+        return bulletCount;
+    }
+
+    public void setBulletCount(float bulletCount)
+    {
+        this.bulletCount = bulletCount;
+    }
+
+    public int getMaxAmmo()
+    {
+        return maxAmmo;
+    }
+
+    public void setMaxAmmo(int maxAmmo)
+    {
+        this.maxAmmo = maxAmmo;
+    }
+
+    public void activateGodTime()
+    {
+        buffDelay = true;
+        godTime = 0;
     }
 }
