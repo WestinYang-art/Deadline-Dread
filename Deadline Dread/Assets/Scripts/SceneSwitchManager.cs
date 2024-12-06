@@ -16,6 +16,7 @@ public class SceneSwitchManager : MonoBehaviour
     public static int daysLeft;
     //all score goals for deadlines
     public static int[] deadlineGoals;
+    public static bool vacation;
 
     public static SceneSwitchManager Instance;
 
@@ -47,7 +48,7 @@ public class SceneSwitchManager : MonoBehaviour
     //this is supposed to switch to the start/main menu, but we don't have one yet
     public static void SwitchToMainMenu()
     {
-        SceneManager.LoadScene("UITest");
+        SceneManager.LoadScene("StartScreen");
     }
 
     public static void SwitchToShop()
@@ -57,7 +58,7 @@ public class SceneSwitchManager : MonoBehaviour
 
     public static void SwitchToRoundEnd()
     {
-        if(score >= deadlineGoals[deadlineNum]) currentDeadlineReached = true;
+        if(!vacation && score >= deadlineGoals[deadlineNum]) currentDeadlineReached = true;
         SceneManager.LoadScene("RoundEnding");
     }
 
@@ -74,12 +75,16 @@ public class SceneSwitchManager : MonoBehaviour
         score = 0;
         currentDeadlineReached = false;
         //this is an extremely temporary measure for debugging. WILL be removed
-        if(deadlineNum > deadlineGoals.Length-1) deadlineNum = 0;
+        if(deadlineNum > deadlineGoals.Length-1)
+        {
+            vacation = true;
+        }
     }
 
     //reset data to initial values for restarting game
     public static void Reset()
     {
+        vacation = false;
         currentDeadlineReached = false;
         deadlineNum = 0;
         daysLeft = 2;

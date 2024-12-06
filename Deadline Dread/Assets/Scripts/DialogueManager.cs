@@ -73,7 +73,8 @@ public class DialogueManager : MonoBehaviour
         mcPanel.SetActive(false);
         mcText.text = "";
         SceneSwitchManager.NextDeadline();
-        SceneSwitchManager.SwitchToMenu();
+        if(SceneSwitchManager.vacation) SceneSwitchManager.SwitchToRoundEnd();
+        else SceneSwitchManager.SwitchToMenu();
     }
 
     private void ContinueStory()
