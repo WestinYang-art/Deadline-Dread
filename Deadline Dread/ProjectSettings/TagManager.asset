@@ -47,6 +47,9 @@ TagManager:
   - name: map
     uniqueID: 974259697
     locked: 0
+  - name: depression
+    uniqueID: 3195761939
+    locked: 0
   - name: collectible
     uniqueID: 3611295139
     locked: 0

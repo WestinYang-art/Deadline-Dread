@@ -332,7 +332,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1af7186fbfb31d9459d41ac6d54c00ee, type: 3}
   - {fileID: 21300000, guid: a77910cef38c8e940976a3dd37485447, type: 3}
   - {fileID: 21300004, guid: c8260d15cb31d3d49a251f7cdb4d1777, type: 3}
-  launcher: {fileID: 1859457396}
+  launcher: {fileID: 1859457401}
 --- !u!1 &1859457396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6494563487607616644, guid: 4d22906d8478dc6498d3f5342ec62ea5, type: 3}
@@ -459,6 +459,9 @@ MonoBehaviour:
   ammoRegen: 1
   sprite: {fileID: 21300000, guid: a973f04d8826a49418c884c14c475f50, type: 3}
   fireMode: 0
+  godTime: 0
+  buffDelay: 0
+  buffTime: 5
 --- !u!1 &1899770776
 GameObject:
   m_ObjectHideFlags: 0
