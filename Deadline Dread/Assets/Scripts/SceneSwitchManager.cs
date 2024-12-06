@@ -18,6 +18,7 @@ public class SceneSwitchManager : MonoBehaviour
     public static int[] deadlineGoals;
     public static bool vacation;
     public static bool introTime;
+    public static int coin;
 
     public static SceneSwitchManager Instance;
 
@@ -88,6 +89,7 @@ public class SceneSwitchManager : MonoBehaviour
         vacation = false;
         introTime = true;
         currentDeadlineReached = false;
+        coin = 0;
         deadlineNum = 0;
         daysLeft = 2;
         deadlineGoals = new int[] {2000, 2500, 3000};

@@ -13,6 +13,9 @@ public class Collectible : MonoBehaviour
     //private float bombDelay = 0;
     private int codeR;
     private bool boundary = false;
+    public const int coinID = 0;
+    public const int bombID = 1;
+    public const int ammoID = 2;
 
     void Start()
     {
@@ -31,15 +34,15 @@ public class Collectible : MonoBehaviour
         {
             switch (codeR)
             {
-                case 0:
+                case coinID:
                     coinCollision();
                     break;
 
-                case 1:
+                case bombID:
                     bombCollision();
                     break;
 
-                case 2:
+                case ammoID:
                     ammoCollision();
                     break;
             }
@@ -90,6 +93,7 @@ public class Collectible : MonoBehaviour
     private void coinCollision()
     {
         Destroy(gameObject);
+        SceneSwitchManager.coin += 1;
     }
 
     private void bombCollision()
