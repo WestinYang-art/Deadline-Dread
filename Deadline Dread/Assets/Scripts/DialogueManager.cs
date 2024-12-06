@@ -40,7 +40,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         bossPanel.SetActive(false);
         mcPanel.SetActive(false);
-        EnterDialogueMode(deadlineDialogues[SceneSwitchManager.deadlineNum]);        
+        if(SceneSwitchManager.introTime)EnterDialogueMode(deadlineDialogues[deadlineDialogues.Length - 1]);
+        else EnterDialogueMode(deadlineDialogues[SceneSwitchManager.deadlineNum]);        
     }
 
     private void Update()
@@ -72,7 +73,9 @@ public class DialogueManager : MonoBehaviour
         bossText.text = "";
         mcPanel.SetActive(false);
         mcText.text = "";
-        SceneSwitchManager.NextDeadline();
+        
+        if(SceneSwitchManager.introTime) SceneSwitchManager.introTime = false;        
+        else SceneSwitchManager.NextDeadline();
         if(SceneSwitchManager.vacation) SceneSwitchManager.SwitchToRoundEnd();
         else SceneSwitchManager.SwitchToMenu();
     }
