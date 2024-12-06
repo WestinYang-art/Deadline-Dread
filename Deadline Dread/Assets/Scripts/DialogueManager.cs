@@ -50,8 +50,8 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        //handle continuing. todo test if using z twice is bad
-        if(Input.GetKeyDown(KeyCode.Z))
+        //handle continuing. left click for that
+        if(Input.GetMouseButtonDown(0))
         {
             ContinueStory();
         }
@@ -72,6 +72,7 @@ public class DialogueManager : MonoBehaviour
         bossText.text = "";
         mcPanel.SetActive(false);
         mcText.text = "";
+        SceneSwitchManager.NextDeadline();
         SceneSwitchManager.SwitchToMenu();
     }
 

@@ -4,7 +4,8 @@ YOU'RE ALREADY 43 SECONDS BEHIND SCHEDULE
 GET IT TOGETHER! #speaker:mc
 yes, sir...
 um. what's the overtime policy? #speaker:boss
-OVERTIME POLICY? if you have to work overtime to get things done, THAT'S ON YOU #speaker:mc
+OVERTIME POLICY? 
+if you have to work overtime to get things done, THAT'S ON YOU #speaker:mc
 alright, but what if i just... did extra work? #speaker:boss
 THEN YOU'RE A GREAT WORKER! #speaker:mc
 do i get a raise? #speaker:boss
