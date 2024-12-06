@@ -60,13 +60,12 @@ public class SceneSwitchManager : MonoBehaviour
         if(score >= deadlineGoals[deadlineNum]) currentDeadlineReached = true;
         SceneManager.LoadScene("RoundEnding");
     }
-    //add methods for any other scenes here. ex...
-    /*
-        main menu (separate from the menu in between runs)
-        shop
-        cutscenes*
-            *these can be triggered within certain scenes instead of being a separate scene entirely. we'll see
-    */
+
+    public static void SwitchToDialogue()
+    {
+        SceneManager.LoadScene("DialogueTest");
+    }
+    //add methods for any other scenes here
 
     public static void NextDeadline()
     {

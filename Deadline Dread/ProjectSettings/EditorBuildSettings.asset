@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoundEnding.unity
     guid: 59efc0070665ee6409e3f6e89342a25e
+  - enabled: 1
+    path: Assets/Scenes/DialogueCutscene.unity
+    guid: 29fd1ebf6b745554f8488fbe6f4d41bd
   m_configObjects: {}

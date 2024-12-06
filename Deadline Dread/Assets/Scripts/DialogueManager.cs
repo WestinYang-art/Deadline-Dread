@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     private string currentSpeaker;
     private const string BOSS = "boss";
     private const string MC = "mc"; 
+    //these play AFTER the dialogue
+    [SerializeField] private TextAsset[] deadlineDialogues;
 
     private const string SPEAKER_TAG = "speaker";
 
@@ -38,6 +40,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         bossPanel.SetActive(false);
         mcPanel.SetActive(false);
+        EnterDialogueMode(deadlineDialogues[SceneSwitchManager.deadlineNum]);        
     }
 
     private void Update()
@@ -69,6 +72,7 @@ public class DialogueManager : MonoBehaviour
         bossText.text = "";
         mcPanel.SetActive(false);
         mcText.text = "";
+        SceneSwitchManager.SwitchToMenu();
     }
 
     private void ContinueStory()

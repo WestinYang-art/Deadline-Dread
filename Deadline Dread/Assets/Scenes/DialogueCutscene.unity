@@ -825,7 +825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00018310547, y: -0.00016785}
+  m_AnchoredPosition: {x: -0.00018310547, y: -0.00016784668}
   m_SizeDelta: {x: -0.00036621, y: 0.00036621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589434906
@@ -899,6 +899,10 @@ MonoBehaviour:
   mcPanel: {fileID: 779971390}
   bossText: {fileID: 1246902184}
   mcText: {fileID: 1242808541}
+  deadlineDialogues:
+  - {fileID: 4900000, guid: c6260d24ecfee894fa4363b138fd791a, type: 3}
+  - {fileID: 4900000, guid: d84fa526e07f55e46907f835c52b99cd, type: 3}
+  - {fileID: 4900000, guid: 8f98ebbbba03ef44e9dce0787e9b177b, type: 3}
 --- !u!4 &1775466447
 Transform:
   m_ObjectHideFlags: 0
