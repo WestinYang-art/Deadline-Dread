@@ -63,7 +63,7 @@ public class SceneSwitchManager : MonoBehaviour
 
     public static void SwitchToDialogue()
     {
-        SceneManager.LoadScene("DialogueTest");
+        SceneManager.LoadScene("DialogueCutscene");
     }
     //add methods for any other scenes here
 
