@@ -19,6 +19,14 @@ public class SceneSwitchManager : MonoBehaviour
     public static bool vacation;
     public static bool introTime;
     public static int coin;
+    public static int healthLvl;
+    public static int fireLvl;
+    public static int fanLvl;
+    //public static int regenLvl;
+    public static int maxALvl;
+    public static int maxSLvl;
+    public static int accelLvl;
+    public static int powerLvl;
 
     public static SceneSwitchManager Instance;
 
@@ -93,5 +101,99 @@ public class SceneSwitchManager : MonoBehaviour
         deadlineNum = 0;
         daysLeft = 2;
         deadlineGoals = new int[] {2000, 2500, 3000};
+    }
+
+    public static void addCoin(int amount)
+    {
+        coin += amount;
+    }
+
+    public static void removeCoin(int amount)
+    {
+        if ((coin - amount) >= 0)
+        {
+            coin -= amount;
+        }
+        else
+        {
+            coin = 0;
+        }
+    }
+
+    public static int getHealthLvl()
+    {
+        return healthLvl;
+    }
+
+    public static void setHealthLvl(int nHealthLvl)
+    {
+        healthLvl = nHealthLvl;
+    }
+
+    public static int getFireLvl()
+    {
+        return fireLvl;
+    }
+
+    public static void setFireLvl(int nFireLvl)
+    {
+        fireLvl = nFireLvl;
+    }
+
+    public static int getFanLvl()
+    {
+        return fanLvl;
+    }
+
+    public static void setFanLvl(int nFanLvl)
+    {
+        fanLvl = nFanLvl;
+    }
+
+    /*public static int getRegenLvl()
+    {
+        return regenLvl;
+    }
+
+    public static void setRegenLvl(int nRegenLvl)
+    {
+        regenLvl = nRegenLvl;
+    }*/
+
+    public static int getMaxALvl()
+    {
+        return maxALvl;
+    }
+
+    public static void setMaxALvl(int nMaxALvl)
+    {
+        maxALvl = nMaxALvl;
+    }
+    public static int getMaxSLvl()
+    {
+        return maxSLvl;
+    }
+
+    public static void setMaxSLvl(int nMaxSLvl)
+    {
+        maxSLvl = nMaxSLvl;
+    }
+    public static int getAccelLvl()
+    {
+        return accelLvl;
+    }
+
+    public static void setAccelLvl(int nAccelLvl)
+    {
+        accelLvl = nAccelLvl;
+    }
+    public static int getPowerLvl()
+    {
+        return powerLvl;
+    }
+
+    public static void setPowerLvl(int nPowerLvl)
+    {
+        powerLvl = nPowerLvl;
     }
 }

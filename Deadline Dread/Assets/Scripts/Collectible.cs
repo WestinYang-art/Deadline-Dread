@@ -93,7 +93,7 @@ public class Collectible : MonoBehaviour
     private void coinCollision()
     {
         Destroy(gameObject);
-        SceneSwitchManager.coin += 1;
+        SceneSwitchManager.addCoin(1);
     }
 
     private void bombCollision()

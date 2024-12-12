@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     public float maxSpeed;
     public float acceleration;
     public float multiplier;
+    public float health;
     public Rigidbody2D rb;
     private float horizontal;
     private float vertical;
@@ -19,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         //animator = GetComponent<Animator>();
+        this.maxSpeed = SceneSwitchManager.getMaxSLvl() * 3;
+        this.acceleration = SceneSwitchManager.getAccelLvl() * 2;
+        this.health = SceneSwitchManager.getHealthLvl();
     }
 
     void Update()
