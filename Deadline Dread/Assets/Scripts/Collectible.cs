@@ -46,6 +46,10 @@ public class Collectible : MonoBehaviour
                     ammoCollision();
                     break;
             }
+            if (codeR > 2 && codeR < 13)
+            {
+                coinCollision();
+            }
         }
     }
 
@@ -53,7 +57,14 @@ public class Collectible : MonoBehaviour
     {
         visuals2 = visuals;
         launcher = fLauncher;
-        codeR = code;
+        if (codeR <= 2)
+        {
+            codeR = code;
+        }
+        else
+        {
+            codeR = coinID;
+        }
         spawnCheckerCreator(x, y);
     }
 

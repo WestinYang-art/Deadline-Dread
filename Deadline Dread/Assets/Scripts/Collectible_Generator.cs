@@ -20,7 +20,7 @@ public class Collectible_Generator : MonoBehaviour
     // public file list;
     void Start()
     {
-        delay = 5f / (float) SceneSwitchManager.getPowerLvl();
+        delay = 3f / (float) SceneSwitchManager.getPowerLvl();
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class Collectible_Generator : MonoBehaviour
             rCoordinateCalculations();
             GameObject collectibleThingy = new GameObject();
             collectibleThingy.AddComponent<Collectible>();
-            collectibleThingy.GetComponent<Collectible>().initialize(random.Next(0, 3), rX, rY, visuals, launcher); // remember to change this later you stupid fuck
+            collectibleThingy.GetComponent<Collectible>().initialize(random.Next(0, 13), rX, rY, visuals, launcher); // remember to change this later you stupid fuck
             actualRandomT = (1 * random.Next(0, rTiming));
             time = 0;
         }
