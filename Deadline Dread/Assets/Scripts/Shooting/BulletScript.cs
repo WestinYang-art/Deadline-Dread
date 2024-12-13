@@ -86,4 +86,12 @@ public class BulletScript : MonoBehaviour
         movement = Quaternion.Euler(0, 0, (rotation - 90)) * Vector2.up * force;
         gameObject.GetComponent<Rigidbody2D>().velocity = movement;
     }
+    
+    public void onTriggerEnter2D(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            gameObject.Destroy;
+        }
+    }
 }

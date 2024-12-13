@@ -2890,7 +2890,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 710313789}
         m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: accelBuy
+        m_MethodName: powerBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
