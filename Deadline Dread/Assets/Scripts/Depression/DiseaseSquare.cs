@@ -52,9 +52,7 @@ public class DiseaseSquare : MonoBehaviour
             if(status == DiseaseGrid.DEPRESSED) ScoreCalculation.AddScore(2);
             //making square healthy
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            SetStatus(DiseaseGrid.HEALTHY);
-
-            
+            SetStatus(DiseaseGrid.HEALTHY);            
         }
     }
 
