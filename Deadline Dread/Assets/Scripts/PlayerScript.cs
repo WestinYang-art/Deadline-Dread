@@ -20,9 +20,9 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         //animator = GetComponent<Animator>();
-        this.maxSpeed = SceneSwitchManager.getMaxSLvl() * 3;
-        this.acceleration = SceneSwitchManager.getAccelLvl() * 2;
-        this.health = SceneSwitchManager.getHealthLvl();
+        //this.maxSpeed = SceneSwitchManager.getMaxSLvl() * 3;
+        //this.acceleration = SceneSwitchManager.getAccelLvl() * 2;
+        //this.health = SceneSwitchManager.getHealthLvl();
     }
 
     void Update()

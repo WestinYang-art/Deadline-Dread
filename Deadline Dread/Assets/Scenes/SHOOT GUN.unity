@@ -450,7 +450,7 @@ MonoBehaviour:
   mainCam: {fileID: 43190045}
   canFire: 1
   timeBetweenFiring: 0.1
-  deathTimer: 1.5
+  deathTimer: 999
   force: 4
   cone: 15
   bulletCount: 5
@@ -869,9 +869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3059372aab40904186c35d5b03741fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  acceleration: 5
-  multiplier: 1
+  maxSpeed: 5
+  acceleration: 2
+  multiplier: 0
   health: 0
   rb: {fileID: 1175545415830506442}
 --- !u!1660057539 &9223372036854775807
