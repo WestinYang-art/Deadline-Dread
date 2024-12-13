@@ -63,7 +63,7 @@ public class SceneSwitchManager : MonoBehaviour
 
     public static void SwitchToShop()
     {
-
+        SceneManager.LoadScene("Shop"); 
     }
 
     public static void SwitchToRoundEnd()
@@ -76,6 +76,7 @@ public class SceneSwitchManager : MonoBehaviour
     {
         SceneManager.LoadScene("DialogueCutscene");
     }
+
     //add methods for any other scenes here
 
     public static void NextDeadline()
