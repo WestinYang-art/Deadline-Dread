@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DialogueCutscene.unity
     guid: 29fd1ebf6b745554f8488fbe6f4d41bd
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: cfc7268a6d463d3468b1d175515e1dd3
   m_configObjects: {}
