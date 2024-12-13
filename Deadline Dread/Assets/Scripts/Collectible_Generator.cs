@@ -7,15 +7,14 @@ public class Collectible_Generator : MonoBehaviour
     public GameObject map;
     public float delay;
     public int rTiming;
-    public float radius;
-    public float innerRadius;
+    public float ring;
+    public float range;
     public Sprite[] visuals;
     public Foam_Launcher launcher;
     private float time = 0;
     private float actualRandomT;
     private System.Random random = new System.Random();
     private static bool denied;
-    private float range;
     private float rX;
     private float rY;
     private float godTime = 0;
@@ -69,22 +68,50 @@ public class Collectible_Generator : MonoBehaviour
 
     public void rCoordinateCalculations()
     {
-        range = radius - innerRadius;
         if (random.Next(0, 2) == 1)
         {
-            rX = gameObject.transform.position.x + innerRadius + Random.Range(0f, range);
+            if (random.Next(0, 2) == 1)
+            {
+                rX = gameObject.transform.position.x + ring + Random.Range(0f, range);
+            }
+            else
+            {
+                rX = gameObject.transform.position.x - ring - Random.Range(0f, range);
+            }
         }
         else
         {
-            rX = gameObject.transform.position.x - innerRadius - Random.Range(0f, range);
+            if (random.Next(0, 2) == 1)
+            {
+                rX = gameObject.transform.position.x - ring + Random.Range(0f, range);
+            }
+            else
+            {
+                rX = gameObject.transform.position.x + ring - Random.Range(0f, range);
+            }
         }
         if (random.Next(0, 2) == 1)
         {
-            rY = gameObject.transform.position.y + innerRadius + Random.Range(0f, range);
+            if (random.Next(0, 2) == 1)
+            {
+                rY = gameObject.transform.position.y + ring + Random.Range(0f, range);
+            }
+            else
+            {
+                rX = gameObject.transform.position.y - ring - Random.Range(0f, range);
+            }
         }
         else
         {
-            rX = gameObject.transform.position.y - innerRadius - Random.Range(0f, range);
+            if (random.Next(0, 2) == 1)
+            {
+                rY = gameObject.transform.position.y - ring + Random.Range(0f, range);
+            }
+            else
+            {
+                rX = gameObject.transform.position.y + ring - Random.Range(0f, range);
+            }
         }
+
     }
 }

@@ -323,10 +323,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 1899770776}
-  delay: 3
-  rTiming: 1
-  radius: 4
-  innerRadius: 5
+  delay: 1
+  rTiming: 0
+  ring: 4
+  range: 1
   visuals:
   - {fileID: 21300000, guid: ea350cef41a82d9419638f2b73fffdc5, type: 3}
   - {fileID: 21300000, guid: 1af7186fbfb31d9459d41ac6d54c00ee, type: 3}

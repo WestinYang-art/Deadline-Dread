@@ -66,7 +66,7 @@ public class Collectible : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Collectible");
         gameObject.tag = "Collectible";
         Vector3 newScale = gameObject.transform.localScale;
-        newScale *= .05f;
+        newScale *= .02f;
         gameObject.transform.localScale = newScale;
         gameObject.AddComponent<BoxCollider2D>();
         gameObject.AddComponent<Rigidbody2D>();
