@@ -2240,14 +2240,9 @@ MonoBehaviour:
   mainCam: {fileID: 77704405}
   asrc: {fileID: 124075274}
   canFire: 0
-  timeBetweenFiring: 0.1
   deathTimer: 10
   force: 20
-  cone: 15
-  bulletCount: 5
-  maxAmmo: 5
   ammoCount: 5
-  ammoRegen: 0.5
   sprite: {fileID: 21300000, guid: a973f04d8826a49418c884c14c475f50, type: 3}
   fireMode: 1
   godTime: 0
