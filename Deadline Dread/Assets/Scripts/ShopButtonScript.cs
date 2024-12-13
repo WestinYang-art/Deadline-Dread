@@ -8,7 +8,7 @@ public class ShopButtonScript : MonoBehaviour
     private float time;
     public float colorTime;
     public int flashAmount;
-    private int count;
+    private int count = 0;
     public bool flashing;
     void Start()
     {
