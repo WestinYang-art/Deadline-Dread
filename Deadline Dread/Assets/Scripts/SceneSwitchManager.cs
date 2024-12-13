@@ -26,8 +26,9 @@ public class SceneSwitchManager : MonoBehaviour
     //public static int regenLvl;
     public static int maxALvl;
     public static int maxSLvl;
-    public static int accelLvl;*/
-    public static int powerLvl;
+    public static int accelLvl;
+    public static int powerLvl;*/
+    
 
     //shop level-able things
     public static int[] abilityLevels;
@@ -114,9 +115,9 @@ public class SceneSwitchManager : MonoBehaviour
         deadlineNum = 0;
         daysLeft = 2;
 
-        abilityLevels = new int[5];
-        abilityPriceByLevel = new int[5];
-        for(int i = 0; i<5; i++)
+        abilityLevels = new int[6];
+        abilityPriceByLevel = new int[6];
+        for(int i = 0; i<6; i++)
         {
             abilityLevels[i] = 1;
             //this is where prices are set.
@@ -217,11 +218,11 @@ public class SceneSwitchManager : MonoBehaviour
     }
     public static int getPowerLvl()
     {
-        return powerLvl;
+        return abilityLevels[POWER_ID];
     }
 
     public static void setPowerLvl(int nPowerLvl)
     {
-        powerLvl = nPowerLvl;
+        abilityLevels[POWER_ID] = nPowerLvl;
     }
 }
