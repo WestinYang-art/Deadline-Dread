@@ -15,6 +15,7 @@ public class DiseaseSquare : MonoBehaviour
     
     public void Initialize(DiseaseGrid g, int status, int x, int y, float cellSize, float spreadSpeed)
     {
+        Debug.Log("cellsizewas" + cellSize);
         grid = g;
         this.status = status;
         this.x = x;
@@ -47,12 +48,12 @@ public class DiseaseSquare : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Bullet") && grid.winning)
+        if (other.CompareTag("Bullet") && grid.winning)
         {
             if(status == DiseaseGrid.DEPRESSED) ScoreCalculation.AddScore(2);
             //making square healthy
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            SetStatus(DiseaseGrid.HEALTHY);            
+            SetStatus(DiseaseGrid.HEALTHY);
         }
     }
 
