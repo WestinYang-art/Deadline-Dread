@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     //private Animator animator;
 
     
-    void Awake()
+    void Start()
     {
         //animator = GetComponent<Animator>();
         this.maxSpeed = SceneSwitchManager.getMaxSLvl() * 3;

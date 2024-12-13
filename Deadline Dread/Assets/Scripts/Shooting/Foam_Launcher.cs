@@ -36,7 +36,7 @@ public class Foam_Launcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.timeBetweenFiring = 1 / SceneSwitchManager.getFireLvl();
+        this.timeBetweenFiring = 1 / (float) SceneSwitchManager.getFireLvl();
         this.cone = SceneSwitchManager.getFanLvl() * 7;
         this.bulletCount = SceneSwitchManager.getFanLvl() * 2;
         this.maxAmmo = SceneSwitchManager.getMaxALvl() * 5;
