@@ -100,7 +100,7 @@ public class Collectible : MonoBehaviour
     {
         GameObject explosion = new GameObject();
         explosion.AddComponent<BulletScript>();
-        explosion.GetComponent<BulletScript>().Initialize(0, gameObject.transform, 0, visuals2[3], 2);
+        explosion.GetComponent<BulletScript>().InitializeBomb(0, gameObject.transform, 0, visuals2[3], 2);
         Destroy(gameObject);
     }
 

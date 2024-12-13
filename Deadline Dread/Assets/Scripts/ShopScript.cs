@@ -18,7 +18,6 @@ public class ShopScript : MonoBehaviour
         buttonText[2].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxALvl() * SceneSwitchManager.getMaxALvl())).ToString();
         buttonText[3].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxSLvl() * SceneSwitchManager.getMaxSLvl())).ToString();
         buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getAccelLvl() * SceneSwitchManager.getAccelLvl())).ToString();
-        SceneSwitchManager.coin = 99999;
     }
 
     // Update is called once per frame
