@@ -91,7 +91,7 @@ public class BulletScript : MonoBehaviour
     {
         if (other.CompareTag("Wall"))
         {
-            gameObject.Destroy;
+            Destroy(gameObject);
         }
     }
 }
