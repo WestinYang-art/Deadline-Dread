@@ -707,7 +707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asrc: {fileID: 827290099}
   wompWomp: {fileID: 8300000, guid: f7426fdec1b1f164b895f7e8eefbc70b, type: 3}
-  success: {fileID: 8300000, guid: 9270d42bd82d53e45a9552350afec8c0, type: 3}
+  success: {fileID: 8300000, guid: cedd37d440a009c478563111cd0b46d6, type: 3}
   vacation: {fileID: 8300000, guid: 47f305a7c07cd6c4bb41b6963d53b9c5, type: 3}
 --- !u!1 &870928914
 GameObject:
