@@ -122,14 +122,15 @@ public class SceneSwitchManager : MonoBehaviour
         {
             abilityLevels[i] = 1;
             //this is where prices are set.
-            abilityPriceByLevel[i] = (i+1) * 5;
+            abilityPriceByLevel[i] *= (i+1) * 5;
         }     
 
-        /*fireLvl = 1;
+        fireLvl = 1;
         fanLvl = 1;
         maxALvl = 1;
         maxSLvl = 1;
-        accelLvl = 1;*/
+        accelLvl = 1;
+        powerLvl = 1;
         deadlineGoals = new int[] {2000, 2500, 3000};
     }
 

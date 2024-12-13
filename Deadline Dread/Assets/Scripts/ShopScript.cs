@@ -21,6 +21,7 @@ public class ShopScript : MonoBehaviour
             UpdateText(i);
         }
         UpdateBalance();
+        SceneSwitchManager.coin = 999999;
     }
 
     public void UpdateBalance()

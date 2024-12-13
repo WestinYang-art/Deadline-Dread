@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FIRE LEVEL
+  m_text: SHOOT GUN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
   m_sharedMaterial: {fileID: -1395229402025279961, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
@@ -3972,7 +3972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: acceleration
+  m_text: FOR A BRIGHTER TOMMOROW!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
   m_sharedMaterial: {fileID: -1395229402025279961, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
@@ -3999,8 +3999,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4106,7 +4106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: creator's name
+  m_text: IM ON FIRE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
   m_sharedMaterial: {fileID: -1395229402025279961, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
@@ -4389,7 +4389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: creator's name
+  m_text: FAN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
   m_sharedMaterial: {fileID: -1395229402025279961, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
@@ -4747,7 +4747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FAN LEVEL
+  m_text: MR CLEAN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
   m_sharedMaterial: {fileID: -1395229402025279961, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
@@ -5728,7 +5728,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: creator's name
+  m_text: ACCELERATE! (jayce)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
   m_sharedMaterial: {fileID: -1395229402025279961, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
@@ -6091,7 +6091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SOMETHING :)
+  m_text: MORE MONEY MORE POWER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
   m_sharedMaterial: {fileID: -1395229402025279961, guid: 2d8480b45d4b1c34c8616678e64101aa, type: 2}
