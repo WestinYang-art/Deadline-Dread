@@ -20,18 +20,24 @@ public class SceneSwitchManager : MonoBehaviour
     public static bool introTime;
     public static int coin;
     public static int healthLvl;
-    public static int fireLvl;
+
+    /*public static int fireLvl;
     public static int fanLvl;
     //public static int regenLvl;
     public static int maxALvl;
     public static int maxSLvl;
-    public static int accelLvl;
+    public static int accelLvl;*/
     public static int powerLvl;
-    private const int FIRE_ID = 0;
-    private const int FAN_ID = 1;
-    private const int MAX_AMMO_ID = 2;
-    private const int MAX_SPEED_ID = 3;
-    private const int ACCEL_ID = 4;
+
+    //shop level-able things
+    public static int[] abilityLevels;
+    public static int[] abilityPriceByLevel;
+    public const int FIRE_ID = 0;
+    public const int FAN_ID = 1;
+    public const int MAX_AMMO_ID = 2;
+    public const int MAX_SPEED_ID = 3;
+    public const int ACCEL_ID = 4;
+    public const int LEVEL_MAX = 5;
 
     public static SceneSwitchManager Instance;
 
@@ -106,11 +112,21 @@ public class SceneSwitchManager : MonoBehaviour
         coin = 0;
         deadlineNum = 0;
         daysLeft = 2;
-        fireLvl = 1;
+
+        abilityLevels = new int[5];
+        abilityPriceByLevel = new int[5];
+        for(int i = 0; i<5; i++)
+        {
+            abilityLevels[i] = 1;
+            //this is where prices are set.
+            abilityPriceByLevel[i] = (i+1) * 5;
+        }     
+
+        /*fireLvl = 1;
         fanLvl = 1;
         maxALvl = 1;
         maxSLvl = 1;
-        accelLvl = 1;
+        accelLvl = 1;*/
         deadlineGoals = new int[] {2000, 2500, 3000};
     }
 
@@ -143,22 +159,22 @@ public class SceneSwitchManager : MonoBehaviour
 
     public static int getFireLvl()
     {
-        return fireLvl;
+        return abilityLevels[FIRE_ID];
     }
 
     public static void setFireLvl(int nFireLvl)
     {
-        fireLvl = nFireLvl;
+        abilityLevels[FIRE_ID] = nFireLvl;
     }
 
     public static int getFanLvl()
     {
-        return fanLvl;
+        return abilityLevels[FAN_ID];
     }
 
     public static void setFanLvl(int nFanLvl)
     {
-        fanLvl = nFanLvl;
+        abilityLevels[FAN_ID] = nFanLvl;
     }
 
     /*public static int getRegenLvl()
@@ -173,30 +189,30 @@ public class SceneSwitchManager : MonoBehaviour
 
     public static int getMaxALvl()
     {
-        return maxALvl;
+        return abilityLevels[MAX_AMMO_ID];
     }
 
     public static void setMaxALvl(int nMaxALvl)
     {
-        maxALvl = nMaxALvl;
+        abilityLevels[MAX_AMMO_ID] = nMaxALvl;
     }
     public static int getMaxSLvl()
     {
-        return maxSLvl;
+        return abilityLevels[MAX_SPEED_ID];
     }
 
     public static void setMaxSLvl(int nMaxSLvl)
     {
-        maxSLvl = nMaxSLvl;
+        abilityLevels[MAX_SPEED_ID] = nMaxSLvl;
     }
     public static int getAccelLvl()
     {
-        return accelLvl;
+        return abilityLevels[ACCEL_ID];
     }
 
     public static void setAccelLvl(int nAccelLvl)
     {
-        accelLvl = nAccelLvl;
+        abilityLevels[ACCEL_ID] = nAccelLvl;
     }
     public static int getPowerLvl()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ShopScript : MonoBehaviour
 {
@@ -10,131 +11,84 @@ public class ShopScript : MonoBehaviour
     public int ammoLvl;
     public int speedLvl;*/
     public GameObject[] buttonList;
-    public GameObject[] buttonText;
+    public TextMeshProUGUI[] priceText;
+    public TextMeshProUGUI balanceText;
+    
     void Start()
     {
-        buttonText[0].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl())).ToString();
-        buttonText[1].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl())).ToString();
-        buttonText[2].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxALvl() * SceneSwitchManager.getMaxALvl())).ToString();
-        buttonText[3].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxSLvl() * SceneSwitchManager.getMaxSLvl())).ToString();
-        buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getAccelLvl() * SceneSwitchManager.getAccelLvl())).ToString();
-        buttonText[5].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl())).ToString();
-        SceneSwitchManager.coin = 9999999;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*coins = SceneSwitchManager.coin;
-        ammoLvl = SceneSwitchManager.getMaxALvl();
-        speedLvl = SceneSwitchManager.getMaxSLvl();*/
-    }
-
-    public void fireBuy()
-    {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl())) && SceneSwitchManager.getFireLvl() < 5)
+        for(int i = 0; i<SceneSwitchManager.abilityLevels.Length; i++)
         {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl()));
-            SceneSwitchManager.setFireLvl(SceneSwitchManager.getFireLvl() + 1);
-            buttonText[0].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl())).ToString();
-            if (SceneSwitchManager.getFireLvl() >= 5)
-            {
-                buttonText[0].GetComponent<TMPro.TextMeshProUGUI>().text = "MAX";
-            }
+            UpdateText(i);
+        }
+        UpdateBalance();
+    }
+
+    public void UpdateBalance()
+    {
+        balanceText.text = "$" + SceneSwitchManager.coin.ToString();
+    }
+
+    public void UpdateText(int ID)
+    {
+        if(SceneSwitchManager.abilityLevels[ID] < SceneSwitchManager.LEVEL_MAX)
+        {
+            int price = SceneSwitchManager.abilityPriceByLevel[SceneSwitchManager.abilityLevels[ID]];
+            priceText[ID].text = "$" + price.ToString() + " for Lv." + (SceneSwitchManager.abilityLevels[ID]+1).ToString();
         }
         else
         {
-            buttonList[0].GetComponent<ShopButtonScript>().flash();
+            priceText[ID].text = "MAX";
+        }        
+        
+    }
+
+    public void Buy(int ID)
+    {
+        
+        if(SceneSwitchManager.abilityLevels[ID] < SceneSwitchManager.LEVEL_MAX)
+        {
+            int price = SceneSwitchManager.abilityPriceByLevel[SceneSwitchManager.abilityLevels[ID]];
+            if(SceneSwitchManager.coin >= price)
+            {
+                SceneSwitchManager.coin -= price;
+                SceneSwitchManager.abilityLevels[ID]+=1;
+            
+                UpdateText(ID);
+                UpdateBalance();
+            }
+            else
+            {
+                buttonList[ID].GetComponent<ShopButtonScript>().flash();
+            }            
         }
+        else
+        {
+            buttonList[ID].GetComponent<ShopButtonScript>().flash();
+        }
+
+    }
+    public void fireBuy()
+    {
+        Buy(SceneSwitchManager.FIRE_ID);
     }
 
     public void fanBuy()
     {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl())) && SceneSwitchManager.getFanLvl() < 5)
-        {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl()));
-            SceneSwitchManager.setFanLvl(SceneSwitchManager.getFanLvl() + 1);
-            buttonText[1].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl())).ToString();
-            if (SceneSwitchManager.getFanLvl() >= 5)
-            {
-                buttonText[1].GetComponent<TMPro.TextMeshProUGUI>().text = "MAX";
-            }
-        }
-        else
-        {
-            buttonList[1].GetComponent<ShopButtonScript>().flash();
-        }
+        Buy(SceneSwitchManager.FAN_ID);
     }
 
     public void ammoLvlBuy()
     {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getMaxALvl() * SceneSwitchManager.getMaxALvl())) && SceneSwitchManager.getMaxALvl() < 5)
-        {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getMaxALvl() * SceneSwitchManager.getMaxALvl()));
-            SceneSwitchManager.setMaxALvl(SceneSwitchManager.getMaxALvl() + 1);
-            buttonText[2].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxALvl() * SceneSwitchManager.getMaxALvl())).ToString();
-            if (SceneSwitchManager.getMaxALvl() >= 5)
-            {
-                buttonText[2].GetComponent<TMPro.TextMeshProUGUI>().text = "MAX";
-            }
-        }
-        else
-        {
-            buttonList[2].GetComponent<ShopButtonScript>().flash();
-        }
+        Buy(SceneSwitchManager.MAX_AMMO_ID);
     }
 
     public void speedBuy()
     {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getMaxSLvl() * SceneSwitchManager.getMaxSLvl())) && SceneSwitchManager.getMaxSLvl() < 5)
-        {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getMaxSLvl() * SceneSwitchManager.getMaxSLvl()));
-            SceneSwitchManager.setMaxSLvl(SceneSwitchManager.getMaxSLvl() + 1);
-            buttonText[3].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxSLvl() * SceneSwitchManager.getMaxSLvl())).ToString();
-            if (SceneSwitchManager.getMaxSLvl() >= 5)
-            {
-                buttonText[3].GetComponent<TMPro.TextMeshProUGUI>().text = "MAX";
-            }
-        }
-        else
-        {
-            buttonList[3].GetComponent<ShopButtonScript>().flash();
-        }
+        Buy(SceneSwitchManager.MAX_SPEED_ID);
     }
 
     public void accelBuy()
     {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getAccelLvl() * SceneSwitchManager.getAccelLvl())) && SceneSwitchManager.getAccelLvl() < 5)
-        {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getAccelLvl() * SceneSwitchManager.getAccelLvl()));
-            SceneSwitchManager.setAccelLvl(SceneSwitchManager.getAccelLvl() + 1);
-            buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getAccelLvl() * SceneSwitchManager.getAccelLvl())).ToString();
-            if (SceneSwitchManager.getAccelLvl() >= 5)
-            {
-                buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "MAX";
-            }
-        }
-        else
-        {
-            buttonList[4].GetComponent<ShopButtonScript>().flash();
-        }
-    }   
-    
-    public void powerBuy()
-    {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl())) && SceneSwitchManager.getPowerLvl() < 5)
-        {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl()));
-            SceneSwitchManager.setPowerLvl(SceneSwitchManager.getPowerLvl() + 1);
-            buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl())).ToString();
-            if (SceneSwitchManager.getPowerLvl() >= 5)
-            {
-                buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "MAX";
-            }
-        }
-        else
-        {
-            buttonList[5].GetComponent<ShopButtonScript>().flash();
-        }
+        Buy(SceneSwitchManager.ACCEL_ID);
     }
 }

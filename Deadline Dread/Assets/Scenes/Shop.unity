@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 701356358}
   - component: {fileID: 701356357}
   m_Layer: 5
-  m_Name: Price
+  m_Name: SpeedPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,12 +1376,13 @@ MonoBehaviour:
   - {fileID: 1622437505}
   - {fileID: 1827138442}
   - {fileID: 63726661}
-  buttonText:
-  - {fileID: 928422765}
-  - {fileID: 1182756377}
-  - {fileID: 1940884964}
-  - {fileID: 701356355}
-  - {fileID: 2090359280}
+  priceText:
+  - {fileID: 928422767}
+  - {fileID: 1182756379}
+  - {fileID: 1940884966}
+  - {fileID: 701356357}
+  - {fileID: 2090359282}
+  balanceText: {fileID: 1721291440}
 --- !u!1 &767939308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,7 +1887,7 @@ GameObject:
   - component: {fileID: 928422768}
   - component: {fileID: 928422767}
   m_Layer: 5
-  m_Name: Price
+  m_Name: FirePrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2529,7 +2530,7 @@ GameObject:
   - component: {fileID: 1182756380}
   - component: {fileID: 1182756379}
   m_Layer: 5
-  m_Name: Price
+  m_Name: FanPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5411,7 +5412,7 @@ GameObject:
   - component: {fileID: 1940884967}
   - component: {fileID: 1940884966}
   m_Layer: 5
-  m_Name: Price
+  m_Name: MaxAmmoPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6054,7 +6055,7 @@ GameObject:
   - component: {fileID: 2090359283}
   - component: {fileID: 2090359282}
   m_Layer: 5
-  m_Name: Price
+  m_Name: AccelPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
