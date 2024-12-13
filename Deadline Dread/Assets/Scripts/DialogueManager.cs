@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
@@ -11,6 +12,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject mcPanel;
     [SerializeField] private TextMeshProUGUI bossText;
     [SerializeField] private TextMeshProUGUI mcText;
+    [SerializeField] private AudioClip[] mcSFX;
+    [SerializeField] private AudioClip[] bossSFX;
+    [SerializeField] private AudioSource asrc;
     private Story currentStory;
     public bool dialogueIsPlaying {get; private set;}
     private string currentSpeaker;
@@ -100,11 +104,28 @@ public class DialogueManager : MonoBehaviour
                 bossPanel.SetActive(false);
                 bossText.text = "";
             }
+            Noises();
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
         }
+    }
+
+    private void Noises()
+    {
+        System.Random r = new System.Random();
+        asrc.Stop();
+        if(currentSpeaker == BOSS)
+        {
+            asrc.clip = bossSFX[r.Next(0, bossSFX.Length)];
+        }
+        //again, assuming it's mc if it's not boss
+        else
+        {
+            asrc.clip = mcSFX[r.Next(0, mcSFX.Length)];
+        }
+        asrc.Play();
     }
 
     private void HandleTags(List<string> currentTags)
