@@ -2243,7 +2243,7 @@ MonoBehaviour:
   deathTimer: 10
   force: 20
   ammoCount: 5
-  sprite: {fileID: 21300000, guid: a973f04d8826a49418c884c14c475f50, type: 3}
+  sprite: {fileID: 21300000, guid: f3a7597e0dd52064da3a2b7113b65ca5, type: 3}
   fireMode: 1
   godTime: 0
   buffDelay: 0
