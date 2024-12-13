@@ -17,12 +17,12 @@ public class Collectible_Generator : MonoBehaviour
     private static bool denied;
     private float rX;
     private float rY;
-    private bool wallCheck = true; // don't remember to remove the "= true" here
+    private bool wallCheck; // don't remember to remove the "= true" here
     private bool boundary;
     // public file list;
     void Start()
     {
-        delay = .01f / (float) SceneSwitchManager.getPowerLvl();
+        delay = .5f / (float) SceneSwitchManager.getPowerLvl();
     }
 
     // Update is called once per frame
