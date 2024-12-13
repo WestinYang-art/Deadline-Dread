@@ -91,4 +91,9 @@ public class ShopScript : MonoBehaviour
     {
         Buy(SceneSwitchManager.ACCEL_ID);
     }
+
+    public void powerBuy()
+    {
+        Buy(SceneSwitchManager.POWER_ID);
+    }
 }
