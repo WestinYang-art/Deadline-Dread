@@ -12,8 +12,6 @@ public class Collectible : MonoBehaviour
     private Foam_Launcher launcher;
     //private float bombDelay = 0;
     private int codeR;
-    private bool wallCheck;
-    private bool boundary = false;
     public const int coinID = 0;
     public const int bombID = 1;
     public const int ammoID = 2;
