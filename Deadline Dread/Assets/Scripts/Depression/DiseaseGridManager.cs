@@ -5,9 +5,9 @@ using UnityEngine;
 public class DiseaseGridManager : MonoBehaviour
 {
     DiseaseGrid ds;
-    [SerializeField] int width;
-    [SerializeField] int height;
-    [SerializeField] float cellSize;
+    [SerializeField] public int width;
+    [SerializeField] public int height;
+    [SerializeField] public float cellSize;
     [SerializeField] float initialSpreadSpeed;
     [SerializeField] float rampUpRate;
     [SerializeField] Sprite[] visuals;

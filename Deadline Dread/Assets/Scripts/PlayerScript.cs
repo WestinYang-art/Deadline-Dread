@@ -5,6 +5,7 @@ using System;
 
 public class PlayerScript : MonoBehaviour
 {
+    [SerializeField] DiseaseGridManager dgm;
     public float maxSpeed;
     public float acceleration;
     public float multiplier;
@@ -19,12 +20,18 @@ public class PlayerScript : MonoBehaviour
     
     void Start()
     {
+        //move player to center of grid
+        MoveToGridCenter();
         //animator = GetComponent<Animator>();
         //this.maxSpeed = SceneSwitchManager.getMaxSLvl() * 3;
         //this.acceleration = SceneSwitchManager.getAccelLvl() * 2;
         //this.health = SceneSwitchManager.getHealthLvl();
     }
 
+    void MoveToGridCenter()
+    {
+        transform.position = new Vector3(( (float)dgm.width / 2.0f) * dgm.cellSize, ((float)dgm.height / 2.0f) * dgm.cellSize, transform.position.z);
+    }
     void Update()
     {
         if (Input.GetButtonDown("Jump") && canDash)
