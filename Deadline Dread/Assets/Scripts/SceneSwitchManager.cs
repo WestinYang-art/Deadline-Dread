@@ -118,7 +118,7 @@ public class SceneSwitchManager : MonoBehaviour
         score = 0;
 
         abilityLevels = new int[6];
-        abilityPriceByLevel = new int[6];
+        abilityPriceByLevel = new int[LEVEL_MAX+1];
         for(int i = 0; i<6; i++)
         {
             abilityLevels[i] = 1;
@@ -126,13 +126,13 @@ public class SceneSwitchManager : MonoBehaviour
             abilityPriceByLevel[i] *= (i+1) * 5;
         }     
 
-        fireLvl = 1;
+        /*fireLvl = 1;
         fanLvl = 1;
         maxALvl = 1;
         maxSLvl = 1;
         accelLvl = 1;
-        powerLvl = 1;
-        deadlineGoals = new int[] {2000, 2500, 3000};
+        powerLvl = 1;*/
+        deadlineGoals = new int[] {2000, 4000, 9001};
     }
 
     public static void addCoin(int amount)
