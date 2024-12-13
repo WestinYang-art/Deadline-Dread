@@ -608,8 +608,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 497791993}
-  - {fileID: 1850106292}
   - {fileID: 1374864320}
+  - {fileID: 1850106292}
   - {fileID: 848536352}
   - {fileID: 96974511}
   m_Father: {fileID: 1271802500}
@@ -1372,10 +1372,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonList:
   - {fileID: 974013990}
-  - {fileID: 1622437505}
   - {fileID: 1515991161}
+  - {fileID: 1622437505}
   - {fileID: 1827138442}
   - {fileID: 63726661}
+  buttonText:
+  - {fileID: 928422765}
+  - {fileID: 1182756377}
+  - {fileID: 1940884964}
+  - {fileID: 701356355}
+  - {fileID: 2090359280}
 --- !u!1 &767939308
 GameObject:
   m_ObjectHideFlags: 0
