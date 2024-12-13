@@ -64,4 +64,26 @@ public class BulletScript : MonoBehaviour
         movement = Quaternion.Euler(0, 0, (rotation - 90)) * Vector2.up * force;
         gameObject.GetComponent<Rigidbody2D>().velocity = movement;
     }
+    public void InitializeBomb(float rotation, Transform position, float force, Sprite sprite, float timeBeforeDestroy)
+    {
+        gameObject.AddComponent<SpriteRenderer>();
+        gameObject.AddComponent<Rigidbody2D>();
+        gameObject.AddComponent<BoxCollider2D>();
+        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(10.0f, 10.0f);
+        this.deathTimer = timeBeforeDestroy;
+
+        gameObject.layer = LayerMask.NameToLayer("BulletLayer");
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerID = SortingLayer.NameToID("bulletSLayer");
+        gameObject.tag = "Bullet";
+        this.force = force;
+        this.position = position;
+        this.rotation = rotation;
+        gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+        float x = position.position.x;
+        float y = position.position.y;
+        gameObject.GetComponent<Rigidbody2D>().transform.position = new Vector3(x, y, 0);
+        movement = Quaternion.Euler(0, 0, (rotation - 90)) * Vector2.up * force;
+        gameObject.GetComponent<Rigidbody2D>().velocity = movement;
+    }
 }
