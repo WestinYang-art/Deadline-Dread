@@ -132,7 +132,7 @@ public class SceneSwitchManager : MonoBehaviour
         maxSLvl = 1;
         accelLvl = 1;
         powerLvl = 1;*/
-        deadlineGoals = new int[] {2000, 4000, 12345};
+        deadlineGoals = new int[] {2000, 5000, 12345};
     }
 
     public static void addCoin(int amount)
