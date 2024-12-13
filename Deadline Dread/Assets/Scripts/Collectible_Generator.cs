@@ -20,7 +20,7 @@ public class Collectible_Generator : MonoBehaviour
     // public file list;
     void Start()
     {
-        delay = 5 / SceneSwitchManager.getPowerLvl;
+        delay = 5 / (float) SceneSwitchManager.getPowerLvl();
     }
 
     // Update is called once per frame
