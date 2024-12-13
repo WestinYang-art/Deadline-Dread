@@ -1705,7 +1705,7 @@ MonoBehaviour:
   height: 20
   cellSize: 0.8
   initialSpreadSpeed: 1
-  rampUpRate: 1.001
+  rampUpRate: 1.1
   visuals:
   - {fileID: 21300000, guid: 61185184c9aa1b24093bac22470bf363, type: 3}
   - {fileID: 21300000, guid: 631601d263510374fafc3d65a71827e2, type: 3}
