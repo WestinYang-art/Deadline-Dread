@@ -284,7 +284,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1587800904}
   - {fileID: 1686169718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -576,6 +575,7 @@ GameObject:
   - component: {fileID: 1587800907}
   - component: {fileID: 1587800906}
   - component: {fileID: 1587800905}
+  - component: {fileID: 1587800908}
   m_Layer: 5
   m_Name: buy regen lvl
   m_TagString: Untagged
@@ -590,17 +590,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587800903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1064238711}
-  m_Father: {fileID: 484421222}
+  m_Father: {fileID: 1686169718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: 87.2}
+  m_AnchoredPosition: {x: 257, y: -3.0000153}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1587800905
@@ -697,6 +697,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587800903}
   m_CullTransparentMesh: 1
+--- !u!114 &1587800908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587800903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  colorTime: 1
+  count: 0
+  flashing: 0
+  testHit: 0
 --- !u!1 &1686169717
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +726,7 @@ GameObject:
   - component: {fileID: 1686169721}
   - component: {fileID: 1686169720}
   - component: {fileID: 1686169719}
+  - component: {fileID: 1686169722}
   m_Layer: 5
   m_Name: buy ammo lvl
   m_TagString: Untagged
@@ -729,6 +747,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1770102709}
+  - {fileID: 1587800904}
   m_Father: {fileID: 484421222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -830,6 +849,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686169717}
   m_CullTransparentMesh: 1
+--- !u!114 &1686169722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686169717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  colorTime: 1
+  count: 0
+  flashing: 0
+  testHit: 0
 --- !u!1 &1770102708
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,9 +1029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13892edd744c4b498012ef8839bf9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
-  ammoLvl: 0
-  speedLvl: 0
+  buttonList:
+  - {fileID: 1686169717}
+  - {fileID: 0}
 --- !u!4 &1811729929
 Transform:
   m_ObjectHideFlags: 0

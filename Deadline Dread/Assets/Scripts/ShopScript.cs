@@ -9,6 +9,7 @@ public class ShopScript : MonoBehaviour
     /*public int coins = SceneSwitchManager.coin;
     public int ammoLvl;
     public int speedLvl;*/
+    public GameObject[] buttonList;
     void Start()
     {
         /*SceneSwitchManager.coin = 999999; // remember to remove this
@@ -33,7 +34,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-
+            buttonList[0].GetComponent<ShopButtonScript>().flash();
         }
     }
 
@@ -46,7 +47,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-            
+            buttonList[1].GetComponent<ShopButtonScript>().flash();
         }
     }
 
@@ -59,7 +60,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-
+            buttonList[2].GetComponent<ShopButtonScript>().flash();
         }
     }
     public void fanBuy()
@@ -71,7 +72,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-
+            buttonList[3].GetComponent<ShopButtonScript>().flash();
         }
     }
     public void accelBuy()
@@ -83,7 +84,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-
+            buttonList[4].GetComponent<ShopButtonScript>().flash();
         }
     }
 }
