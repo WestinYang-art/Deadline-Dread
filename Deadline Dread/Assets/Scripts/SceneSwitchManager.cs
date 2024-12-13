@@ -123,7 +123,7 @@ public class SceneSwitchManager : MonoBehaviour
         {
             abilityLevels[i] = 1;
             //this is where prices are set.
-            abilityPriceByLevel[i] = (i+1) * (i+1) * 5;
+            abilityPriceByLevel[i] = i * (i+1) * 5;
         }     
 
         /*fireLvl = 1;
