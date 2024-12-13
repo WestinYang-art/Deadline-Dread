@@ -389,8 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 1
-  flashAmount: 5
+  colorTime: 0.5
+  flashAmount: 2
   flashing: 0
 --- !u!1 &96974510
 GameObject:
@@ -1645,7 +1645,7 @@ MonoBehaviour:
   - {fileID: 1622437505}
   - {fileID: 1827138442}
   - {fileID: 63726661}
-  - {fileID: 1669374815}
+  - {fileID: 1081773323}
   priceText:
   - {fileID: 928422767}
   - {fileID: 1182756379}
@@ -2470,8 +2470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 1
-  flashAmount: 5
+  colorTime: 0.5
+  flashAmount: 2
   flashing: 0
 --- !u!1 &990586768
 GameObject:
@@ -2803,7 +2803,7 @@ GameObject:
   - component: {fileID: 1081773327}
   - component: {fileID: 1081773326}
   m_Layer: 5
-  m_Name: PowerLevel
+  m_Name: PowerLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2841,8 +2841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 1
-  flashAmount: 5
+  colorTime: 0.5
+  flashAmount: 2
   flashing: 0
 --- !u!114 &1081773327
 MonoBehaviour:
@@ -4329,8 +4329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 1
-  flashAmount: 5
+  colorTime: 0.5
+  flashAmount: 2
   flashing: 0
 --- !u!1 &1604598455
 GameObject:
@@ -4612,8 +4612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 1
-  flashAmount: 5
+  colorTime: 0.5
+  flashAmount: 2
   flashing: 0
 --- !u!1 &1635499777
 GameObject:
@@ -5951,8 +5951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 1
-  flashAmount: 5
+  colorTime: 0.5
+  flashAmount: 2
   flashing: 0
 --- !u!1 &1850106291
 GameObject:

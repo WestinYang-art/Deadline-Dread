@@ -115,6 +115,7 @@ public class SceneSwitchManager : MonoBehaviour
         coin = 0;
         deadlineNum = 0;
         daysLeft = 2;
+        score = 0;
 
         abilityLevels = new int[6];
         abilityPriceByLevel = new int[6];
