@@ -25,6 +25,32 @@ public class ShopScript : MonoBehaviour
         speedLvl = SceneSwitchManager.getMaxSLvl();*/
     }
 
+    public void fireBuy()
+    {
+        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl())) && SceneSwitchManager.getFireLvl() < 5)
+        {
+            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl()));
+            SceneSwitchManager.setFireLvl(SceneSwitchManager.getFireLvl() + 1);
+        }
+        else
+        {
+            buttonList[0].GetComponent<ShopButtonScript>().flash();
+        }
+    }
+
+    public void fanBuy()
+    {
+        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl())) && SceneSwitchManager.getFanLvl() < 5)
+        {
+            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl()));
+            SceneSwitchManager.setFanLvl(SceneSwitchManager.getFanLvl() + 1);
+        }
+        else
+        {
+            buttonList[1].GetComponent<ShopButtonScript>().flash();
+        }
+    }
+
     public void ammoLvlBuy()
     {
         if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getMaxALvl() * SceneSwitchManager.getMaxALvl())) && SceneSwitchManager.getMaxALvl() < 5)
@@ -34,7 +60,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-            buttonList[0].GetComponent<ShopButtonScript>().flash();
+            buttonList[2].GetComponent<ShopButtonScript>().flash();
         }
     }
 
@@ -47,34 +73,10 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-            buttonList[1].GetComponent<ShopButtonScript>().flash();
-        }
-    }
-
-    public void fireBuy()
-    {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl())) && SceneSwitchManager.getFireLvl() < 5)
-        {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getFireLvl() * SceneSwitchManager.getFireLvl()));
-            SceneSwitchManager.setFireLvl(SceneSwitchManager.getFireLvl() + 1);
-        }
-        else
-        {
-            buttonList[2].GetComponent<ShopButtonScript>().flash();
-        }
-    }
-    public void fanBuy()
-    {
-        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl())) && SceneSwitchManager.getFanLvl() < 5)
-        {
-            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getFanLvl() * SceneSwitchManager.getFanLvl()));
-            SceneSwitchManager.setFanLvl(SceneSwitchManager.getFanLvl() + 1);
-        }
-        else
-        {
             buttonList[3].GetComponent<ShopButtonScript>().flash();
         }
     }
+
     public void accelBuy()
     {
         if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getAccelLvl() * SceneSwitchManager.getAccelLvl())) && SceneSwitchManager.getAccelLvl() < 5)

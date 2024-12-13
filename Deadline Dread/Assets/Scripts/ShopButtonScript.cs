@@ -23,7 +23,7 @@ public class ShopButtonScript : MonoBehaviour
             time += Time.deltaTime;
             if (time >= colorTime)
             {
-                if (count % 2 == 0)
+                if (count % 2 == 1)
                 {
                     gameObject.GetComponent<Image>().color = Color.red;
                 }
