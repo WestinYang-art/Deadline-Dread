@@ -255,8 +255,9 @@ GameObject:
   - component: {fileID: 63726665}
   - component: {fileID: 63726664}
   - component: {fileID: 63726663}
+  - component: {fileID: 63726666}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AccelLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -376,6 +377,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63726661}
   m_CullTransparentMesh: 1
+--- !u!114 &63726666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63726661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  colorTime: 1
+  count: 0
+  flashing: 0
+  testHit: 0
 --- !u!1 &96974510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1372,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13892edd744c4b498012ef8839bf9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonList:
+  - {fileID: 974013990}
+  - {fileID: 1622437505}
+  - {fileID: 1515991161}
+  - {fileID: 1827138442}
+  - {fileID: 63726661}
 --- !u!1 &767939308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,8 +1932,9 @@ GameObject:
   - component: {fileID: 974013994}
   - component: {fileID: 974013993}
   - component: {fileID: 974013992}
+  - component: {fileID: 974013995}
   m_Layer: 5
-  m_Name: Button
+  m_Name: FireLvlButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2029,6 +2054,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974013990}
   m_CullTransparentMesh: 1
+--- !u!114 &974013995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974013990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  colorTime: 1
+  count: 0
+  flashing: 0
+  testHit: 0
 --- !u!1 &1004201336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,8 +3368,9 @@ GameObject:
   - component: {fileID: 1515991165}
   - component: {fileID: 1515991164}
   - component: {fileID: 1515991163}
+  - component: {fileID: 1515991166}
   m_Layer: 5
-  m_Name: Button
+  m_Name: FanLvlButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3447,6 +3490,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515991161}
   m_CullTransparentMesh: 1
+--- !u!114 &1515991166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515991161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  colorTime: 1
+  count: 0
+  flashing: 0
+  testHit: 0
 --- !u!1 &1604598455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,8 +3653,9 @@ GameObject:
   - component: {fileID: 1622437509}
   - component: {fileID: 1622437508}
   - component: {fileID: 1622437507}
+  - component: {fileID: 1622437510}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MaxAmmoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3714,6 +3775,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622437505}
   m_CullTransparentMesh: 1
+--- !u!114 &1622437510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622437505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  colorTime: 1
+  count: 0
+  flashing: 0
+  testHit: 0
 --- !u!1 &1635499777
 GameObject:
   m_ObjectHideFlags: 0
@@ -4824,8 +4902,9 @@ GameObject:
   - component: {fileID: 1827138446}
   - component: {fileID: 1827138445}
   - component: {fileID: 1827138444}
+  - component: {fileID: 1827138447}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SpeedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4945,6 +5024,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827138442}
   m_CullTransparentMesh: 1
+--- !u!114 &1827138447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827138442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  colorTime: 1
+  count: 0
+  flashing: 0
+  testHit: 0
 --- !u!1 &1850106291
 GameObject:
   m_ObjectHideFlags: 0
