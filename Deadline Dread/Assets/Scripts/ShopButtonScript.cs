@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ShopButtonScript : MonoBehaviour
 {
-    public float time;
-    public float colorTime = 1;
-    public int count;
+    private float time;
+    public float colorTime;
+    public int flashAmount;
+    private int count;
     public bool flashing;
-    public bool testHit;
     void Start()
     {
 
@@ -32,7 +32,7 @@ public class ShopButtonScript : MonoBehaviour
                     gameObject.GetComponent<Image>().color = Color.white;
                 }
                 count += 1;
-                if (count >= 11)
+                if (count >= flashAmount)
                 {
                     flashing = false;
                     count = 0;
