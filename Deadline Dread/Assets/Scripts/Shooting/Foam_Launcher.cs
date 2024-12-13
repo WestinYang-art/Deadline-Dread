@@ -5,6 +5,7 @@ using UnityEngine;
 public class Foam_Launcher : MonoBehaviour
 {
     public Camera mainCam;
+    public AudioSource asrc;
     private Vector3 mousePos;
     public bool canFire;
     private float bulletTimer;
@@ -98,6 +99,7 @@ public class Foam_Launcher : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && canFire)
         {
+            asrc.Play();
             ammoCount -= 1;
             for (int i = 0; i < bulletCount; i++)
             {
