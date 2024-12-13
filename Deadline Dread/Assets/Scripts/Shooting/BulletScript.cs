@@ -97,6 +97,6 @@ public class BulletScript : MonoBehaviour
     
     public bool onCollision()
     {
-        return Physics2D.OverlapCircle(gameObject.transform.position, 1f, LayerMask.GetMask("Wall"));
+        return Physics2D.OverlapCircle(gameObject.transform.position, .1f, LayerMask.GetMask("Wall"));
     }
 }
