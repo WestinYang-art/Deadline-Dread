@@ -389,8 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 0.5
-  flashAmount: 7
+  colorTime: 0.1
+  flashAmount: 3
   flashing: 0
 --- !u!1 &96974510
 GameObject:
@@ -2470,8 +2470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 0.5
-  flashAmount: 7
+  colorTime: 0.1
+  flashAmount: 3
   flashing: 0
 --- !u!1 &990586768
 GameObject:
@@ -2841,8 +2841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 0.5
-  flashAmount: 7
+  colorTime: 0.1
+  flashAmount: 3
   flashing: 0
 --- !u!114 &1081773327
 MonoBehaviour:
@@ -4329,8 +4329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 0.5
-  flashAmount: 7
+  colorTime: 0.1
+  flashAmount: 3
   flashing: 0
 --- !u!1 &1604598455
 GameObject:
@@ -4612,8 +4612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 0.5
-  flashAmount: 7
+  colorTime: 0.1
+  flashAmount: 3
   flashing: 0
 --- !u!1 &1635499777
 GameObject:
@@ -5951,8 +5951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe1e9d22bc92b149ab9b1f08a9bec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorTime: 0.5
-  flashAmount: 7
+  colorTime: 0.1
+  flashAmount: 3
   flashing: 0
 --- !u!1 &1850106291
 GameObject:
