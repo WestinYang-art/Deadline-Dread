@@ -84,6 +84,17 @@ public class DiseaseGrid
         }
     }
 
+    public void DiseaseEverything()
+    {
+        for(int x = 0; x < width; x++)
+        {
+            for(int y = 0; y < height; y++)
+            {
+                SetSquareStatus(x, y, DEPRESSED);
+            }
+        }
+    }
+
     //checks for loss & triggers scene switch for now. we may want to have loss actually be triggered elsewhere
     public void CheckLoss()
     {
@@ -103,6 +114,7 @@ public class DiseaseGrid
             Debug.Log("we lost!!!");
             winning=false;
         }
+        else winning=true;
     }
 
     public void SetAllSpeed(float newSpeed)

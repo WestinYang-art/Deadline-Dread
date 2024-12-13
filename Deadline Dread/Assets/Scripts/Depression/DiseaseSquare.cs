@@ -41,6 +41,15 @@ public class DiseaseSquare : MonoBehaviour
     public void SetStatus(int s)
     {
         status = s;
+
+        if(status == DiseaseGrid.DEPRESSED)
+        {
+            System.Random r = new System.Random();  
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = grid.visuals[ (int) r.Next(0, grid.visuals.Length)];
+            gameObject.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Sliced;
+            gameObject.GetComponent<SpriteRenderer>().size = new Vector2(cellSize*1.5f, cellSize*1.5f);
+        }
         //gameObject.GetComponent<TextMeshPro>().SetText(status.ToString());
     }
 
@@ -62,12 +71,7 @@ public class DiseaseSquare : MonoBehaviour
         yield return new WaitForSeconds(spreadSpeed);
         if(status == DiseaseGrid.DEPRESSED)
         {
-            System.Random r = new System.Random();
-            //become depressioned
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            gameObject.GetComponent<SpriteRenderer>().sprite = grid.visuals[ (int) r.Next(0, grid.visuals.Length)];
-            gameObject.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Sliced;
-            gameObject.GetComponent<SpriteRenderer>().size = new Vector2(cellSize*1.5f, cellSize*1.5f);
+            System.Random r = new System.Random();          
 
             //pick a random neighbor
             /*
@@ -92,12 +96,6 @@ public class DiseaseSquare : MonoBehaviour
 
             //currently, loss is checked in disease grid itself. this is kinda messy, we might want to change
         }
-        StartCoroutine(Spread());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(grid.winning) StartCoroutine(Spread());
     }
 }
