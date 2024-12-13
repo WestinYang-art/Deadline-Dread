@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Collectible
   - Map
+  - Wall
   layers:
   - Default
   - TransparentFX
