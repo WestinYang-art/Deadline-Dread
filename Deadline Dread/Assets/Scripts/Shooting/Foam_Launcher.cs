@@ -10,22 +10,22 @@ public class Foam_Launcher : MonoBehaviour
     public bool canFire;
     private float bulletTimer;
     private float fireTimer;
-    public float timeBetweenFiring;
+    private float timeBetweenFiring;
     public float deathTimer;
     public float force;
     private float rotZ;
     private Vector3 rotation;
-    public float cone;
+    private float cone;
     private float negDegrees;
     private float posDegrees;
     private float tNegDegrees;
     private float tPosDegrees;
     private float projDegree;
     private float statTimeBetweenFiring;
-    public float bulletCount;
-    public int maxAmmo;
+    private float bulletCount;
+    private int maxAmmo;
     public int ammoCount;
-    public float ammoRegen;
+    private float ammoRegen;
     private int statMaxAmmo;
     private float statAmmoRegen;
     private System.Random rFactor = new System.Random();
@@ -219,6 +219,16 @@ public class Foam_Launcher : MonoBehaviour
     public void setMaxAmmo(int maxAmmo)
     {
         this.maxAmmo = maxAmmo;
+    }
+
+    public int getAmmoCount()
+    {
+        return ammoCount;
+    }
+
+    public void setAmmoCount(int nAmmoCount)
+    {
+        ammoCount = nAmmoCount;
     }
 
     public void activateGodTime()

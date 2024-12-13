@@ -17,7 +17,7 @@ public class PlaytimeUIManager : MonoBehaviour
 
     private void SetAmmoText()
     {
-        ammoText.text = "Ammo: " + gun.ammoCount.ToString() + "/" + gun.maxAmmo.ToString();
+        ammoText.text = "Ammo: " + gun.getAmmoCount().ToString() + "/" + gun.getMaxAmmo().ToString();
     }
 
     void Update()
