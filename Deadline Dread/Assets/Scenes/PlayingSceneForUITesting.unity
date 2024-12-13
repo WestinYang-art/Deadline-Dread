@@ -1279,7 +1279,7 @@ MonoBehaviour:
   mainCam: {fileID: 77704405}
   canFire: 0
   timeBetweenFiring: 0.1
-  deathTimer: 1.5
+  deathTimer: 10
   force: 20
   cone: 15
   bulletCount: 5

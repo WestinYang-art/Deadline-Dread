@@ -49,8 +49,8 @@ public class BulletScript : MonoBehaviour
         gameObject.AddComponent<BoxCollider2D>();
         this.deathTimer = timeBeforeDestroy;
 
-        gameObject.layer = LayerMask.NameToLayer("Bullet");
-        gameObject.GetComponent<SpriteRenderer>().sortingLayerID = SortingLayer.NameToID("bullet");
+        gameObject.layer = LayerMask.NameToLayer("BulletLayer");
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerID = SortingLayer.NameToID("bulletSLayer");
         gameObject.tag = "Bullet";
         this.force = force;
         this.position = position;

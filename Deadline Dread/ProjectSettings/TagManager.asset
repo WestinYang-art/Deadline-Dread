@@ -16,7 +16,7 @@ TagManager:
   - UI
   - Enemy
   - Player
-  - Bullet
+  - BulletLayer
   - Collectible
   - 
   - 
@@ -53,7 +53,7 @@ TagManager:
   - name: collectible
     uniqueID: 3611295139
     locked: 0
-  - name: bullet
+  - name: bulletSLayer
     uniqueID: 981978561
     locked: 0
   - name: player
