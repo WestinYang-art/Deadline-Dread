@@ -37,6 +37,14 @@ public class BulletScript : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if (onCollision())
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void Initialize(float rotation, Transform position)
     {
 
@@ -87,11 +95,8 @@ public class BulletScript : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().velocity = movement;
     }
     
-    public void onTriggerEnter2D(Collider other)
+    public bool onCollision()
     {
-        if (other.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
+        return Physics2D.OverlapCircle(gameObject.transform.position, 1f, LayerMask.GetMask("Wall"));
     }
 }
