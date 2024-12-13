@@ -100,6 +100,11 @@ public class SceneSwitchManager : MonoBehaviour
         coin = 0;
         deadlineNum = 0;
         daysLeft = 2;
+        fireLvl = 1;
+        fanLvl = 1;
+        maxALvl = 1;
+        maxSLvl = 1;
+        accelLvl = 1;
         deadlineGoals = new int[] {2000, 2500, 3000};
     }
 
