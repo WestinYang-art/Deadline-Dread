@@ -93,14 +93,14 @@ public class Collectible : MonoBehaviour
     private void coinCollision()
     {
         Destroy(gameObject);
-        SceneSwitchManager.addCoin(1);
+        SceneSwitchManager.addCoin(SceneSwitchManager.getPowerLvl() * 5);
     }
 
     private void bombCollision()
     {
         GameObject explosion = new GameObject();
         explosion.AddComponent<BulletScript>();
-        explosion.GetComponent<BulletScript>().InitializeBomb(0, gameObject.transform, 0, visuals2[3], 2);
+        explosion.GetComponent<BulletScript>().InitializeBomb(0, gameObject.transform, 0, visuals2[3], 2, SceneSwitchManager.getPowerLvl() * 2);
         Destroy(gameObject);
     }
 

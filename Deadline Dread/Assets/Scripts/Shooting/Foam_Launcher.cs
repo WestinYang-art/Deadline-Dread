@@ -21,6 +21,7 @@ public class Foam_Launcher : MonoBehaviour
     private float tNegDegrees;
     private float tPosDegrees;
     private float projDegree;
+    private float statTimeBetweenFiring;
     public float bulletCount;
     public int maxAmmo;
     public int ammoCount;
@@ -37,13 +38,15 @@ public class Foam_Launcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.timeBetweenFiring = 1 / (float) SceneSwitchManager.getFireLvl();
+        this.timeBetweenFiring = .5f / (float) SceneSwitchManager.getFireLvl();
         this.cone = SceneSwitchManager.getFanLvl() * 7;
         this.bulletCount = SceneSwitchManager.getFanLvl() * 2;
         this.maxAmmo = SceneSwitchManager.getMaxALvl() * 3;
-        this.ammoRegen = SceneSwitchManager.getMaxALvl() / 3;
+        this.ammoRegen = 1f / SceneSwitchManager.getMaxALvl();
         statAmmoRegen = ammoRegen;
         statMaxAmmo = maxAmmo;
+        statTimeBetweenFiring = timeBetweenFiring;
+        buffTime = 1 + (((float) SceneSwitchManager.getPowerLvl()) / 2);
     }
 
     // Update is called once per frame
@@ -62,6 +65,7 @@ public class Foam_Launcher : MonoBehaviour
         if (buffDelay == true)
         {
             godTime += Time.deltaTime;
+            timeBetweenFiring = .001f;
             ammoRegen = .01f;
             maxAmmo = 999;
         }
@@ -69,6 +73,7 @@ public class Foam_Launcher : MonoBehaviour
         {
             ammoRegen = statAmmoRegen;
             maxAmmo = statMaxAmmo;
+            timeBetweenFiring = statTimeBetweenFiring;
             if (ammoCount >= maxAmmo)
             {
                 ammoCount = maxAmmo;

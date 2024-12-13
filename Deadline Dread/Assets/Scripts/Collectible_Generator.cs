@@ -17,18 +17,16 @@ public class Collectible_Generator : MonoBehaviour
     private static bool denied;
     private float rX;
     private float rY;
-    private float godTime = 0;
     // public file list;
     void Start()
     {
-        
+        delay = 5 / SceneSwitchManager.getPowerLvl;
     }
 
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
-        godTime += Time.deltaTime;
         if (time >= delay + actualRandomT)
         {
             rCoordinateCalculations();

@@ -18,6 +18,8 @@ public class ShopScript : MonoBehaviour
         buttonText[2].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxALvl() * SceneSwitchManager.getMaxALvl())).ToString();
         buttonText[3].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getMaxSLvl() * SceneSwitchManager.getMaxSLvl())).ToString();
         buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getAccelLvl() * SceneSwitchManager.getAccelLvl())).ToString();
+        buttonText[5].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl())).ToString();
+        SceneSwitchManager.coin = 9999999;
     }
 
     // Update is called once per frame
@@ -115,6 +117,24 @@ public class ShopScript : MonoBehaviour
         else
         {
             buttonList[4].GetComponent<ShopButtonScript>().flash();
+        }
+    }   
+    
+    public void powerBuy()
+    {
+        if (SceneSwitchManager.coin >= (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl())) && SceneSwitchManager.getPowerLvl() < 5)
+        {
+            SceneSwitchManager.coin -= (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl()));
+            SceneSwitchManager.setPowerLvl(SceneSwitchManager.getPowerLvl() + 1);
+            buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "$" + (5 * (SceneSwitchManager.getPowerLvl() * SceneSwitchManager.getPowerLvl())).ToString();
+            if (SceneSwitchManager.getPowerLvl() >= 5)
+            {
+                buttonText[4].GetComponent<TMPro.TextMeshProUGUI>().text = "MAX";
+            }
+        }
+        else
+        {
+            buttonList[5].GetComponent<ShopButtonScript>().flash();
         }
     }
 }
