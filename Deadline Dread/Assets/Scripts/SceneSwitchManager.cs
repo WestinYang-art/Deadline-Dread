@@ -38,8 +38,9 @@ public class SceneSwitchManager : MonoBehaviour
     public const int MAX_AMMO_ID = 2;
     public const int MAX_SPEED_ID = 3;
     public const int ACCEL_ID = 4;
+    public const int POWER_ID = 5;
     public const int LEVEL_MAX = 5;
-    public const int POWER_ID = 6;
+    
 
     public static SceneSwitchManager Instance;
 
