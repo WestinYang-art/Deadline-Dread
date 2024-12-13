@@ -12,6 +12,7 @@ public class Collectible : MonoBehaviour
     private Foam_Launcher launcher;
     //private float bombDelay = 0;
     private int codeR;
+    private bool wallCheck;
     private bool boundary = false;
     public const int coinID = 0;
     public const int bombID = 1;
@@ -57,7 +58,7 @@ public class Collectible : MonoBehaviour
     {
         visuals2 = visuals;
         launcher = fLauncher;
-        if (codeR <= 2)
+        if (code <= 2)
         {
             codeR = code;
         }
@@ -83,17 +84,6 @@ public class Collectible : MonoBehaviour
         gameObject.AddComponent<Rigidbody2D>();
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-
-        boundary = Physics2D.OverlapCircle(gameObject.transform.position, 1f, LayerMask.GetMask("mapLayer"));
-        if (boundary == false)
-        {
-            Collectible_Generator.setDenied(true);
-            Destroy(gameObject);
-        }
-        else
-        {
-            Collectible_Generator.setDenied(false);
-        }
     }
 
     private bool collided()

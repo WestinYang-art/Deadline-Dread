@@ -17,10 +17,12 @@ public class Collectible_Generator : MonoBehaviour
     private static bool denied;
     private float rX;
     private float rY;
+    private bool wallCheck = true; // don't remember to remove the "= true" here
+    private bool boundary;
     // public file list;
     void Start()
     {
-        delay = 3f / (float) SceneSwitchManager.getPowerLvl();
+        delay = .01f / (float) SceneSwitchManager.getPowerLvl();
     }
 
     // Update is called once per frame
@@ -29,19 +31,14 @@ public class Collectible_Generator : MonoBehaviour
         time += Time.deltaTime;
         if (time >= delay + actualRandomT)
         {
-            rCoordinateCalculations();
-            GameObject collectibleThingy = new GameObject();
-            collectibleThingy.AddComponent<Collectible>();
-            collectibleThingy.GetComponent<Collectible>().initialize(random.Next(0, 13), rX, rY, visuals, launcher); // remember to change this later you stupid fuck
-            actualRandomT = (1 * random.Next(0, rTiming));
-            time = 0;
+            spawnObject();
+            while (denied == true)
+            {
+                spawnObject();
+                denied = false;
+            }
         }
-        while (denied != false)
-        {
-            // check map boundaries to make sure you don't spawn a item outside of the map
-            // initialize collectible from a list of collectibles
-            denied = false;
-        }
+
     }
 
     private void onClean()
@@ -111,5 +108,28 @@ public class Collectible_Generator : MonoBehaviour
             }
         }
 
+    }
+
+    public void spawnObject()
+    {
+        rCoordinateCalculations();
+        GameObject collectibleThingy = new GameObject();
+        collectibleThingy.AddComponent<Collectible>();
+        collectibleThingy.GetComponent<Collectible>().initialize(random.Next(0, 13), rX, rY, visuals, launcher);
+        actualRandomT = (1 * random.Next(0, rTiming));
+        time = 0;
+        boundary = Physics2D.OverlapCircle(gameObject.transform.position, 1f, LayerMask.GetMask("mapLayer"));
+        wallCheck = Physics2D.OverlapCircle(gameObject.transform.position, 2f, LayerMask.GetMask("Wall"));
+        if (boundary == true && wallCheck == true)
+        {
+            denied = true;
+            Destroy(collectibleThingy);
+            Debug.Log("Can't Spawn");
+        }
+        else
+        {
+            Debug.Log("Spawned successfully");
+            denied = false;
+        }
     }
 }

@@ -46,6 +46,7 @@ public class Foam_Launcher : MonoBehaviour
         statAmmoRegen = ammoRegen;
         statMaxAmmo = maxAmmo;
         statTimeBetweenFiring = timeBetweenFiring;
+        ammoCount = maxAmmo;
         buffTime = 1 + (((float) SceneSwitchManager.getPowerLvl()) / 2);
     }
 
