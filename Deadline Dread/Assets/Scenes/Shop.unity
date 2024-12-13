@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTime: 0.5
-  flashAmount: 2
+  flashAmount: 7
   flashing: 0
 --- !u!1 &96974510
 GameObject:
@@ -2471,7 +2471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTime: 0.5
-  flashAmount: 2
+  flashAmount: 7
   flashing: 0
 --- !u!1 &990586768
 GameObject:
@@ -2842,7 +2842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTime: 0.5
-  flashAmount: 2
+  flashAmount: 7
   flashing: 0
 --- !u!114 &1081773327
 MonoBehaviour:
@@ -4330,7 +4330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTime: 0.5
-  flashAmount: 2
+  flashAmount: 7
   flashing: 0
 --- !u!1 &1604598455
 GameObject:
@@ -4613,7 +4613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTime: 0.5
-  flashAmount: 2
+  flashAmount: 7
   flashing: 0
 --- !u!1 &1635499777
 GameObject:
@@ -5952,7 +5952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTime: 0.5
-  flashAmount: 2
+  flashAmount: 7
   flashing: 0
 --- !u!1 &1850106291
 GameObject:
