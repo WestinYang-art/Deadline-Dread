@@ -21,6 +21,7 @@ public class DiseaseGridManager : MonoBehaviour
         ds.DiseaseTheEdges();
         StartCoroutine(ReDisease());
         StartCoroutine(SpreadRampUp());
+        StartCoroutine(PeriodicLossCheck());
     }
 
     IEnumerator SpreadRampUp()
@@ -49,23 +50,25 @@ public class DiseaseGridManager : MonoBehaviour
 
     IEnumerator WaitThenSwitch()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         SceneSwitchManager.daysLeft--;
         if(SceneSwitchManager.daysLeft > 0) SceneSwitchManager.SwitchToMenu();
         else SceneSwitchManager.SwitchToRoundEnd();
     }
-    void Update()
+
+    IEnumerator PeriodicLossCheck()
     {
-        if(!ds.winning)
+        if(!done)
         {
-            //not the best place to handle loss but whatever... i dont feel like making a Loss Manager rn            
-            StartCoroutine(WaitThenSwitch());
-            ds.KillAll();
-            done = true;
-        }
-        else
-        {
+            yield return new WaitForSeconds(0.5f);
             ds.CheckLoss();
+            if(!ds.winning)
+            {
+                ds.DiseaseEverything();
+                StartCoroutine(WaitThenSwitch());
+                done = true;                
+            }
+            else StartCoroutine(PeriodicLossCheck());
         }
     }
 }
