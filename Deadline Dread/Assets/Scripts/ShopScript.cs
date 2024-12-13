@@ -6,22 +6,22 @@ public class ShopScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public int coins = SceneSwitchManager.coin;
+    /*public int coins = SceneSwitchManager.coin;
     public int ammoLvl;
-    public int speedLvl;
+    public int speedLvl;*/
     void Start()
     {
-        SceneSwitchManager.coin = 999999; // remember to remove this
+        /*SceneSwitchManager.coin = 999999; // remember to remove this
         SceneSwitchManager.setMaxSLvl(0);
-        SceneSwitchManager.setMaxALvl(0);
+        SceneSwitchManager.setMaxALvl(0);*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        coins = SceneSwitchManager.coin;
+        /*coins = SceneSwitchManager.coin;
         ammoLvl = SceneSwitchManager.getMaxALvl();
-        speedLvl = SceneSwitchManager.getMaxSLvl();
+        speedLvl = SceneSwitchManager.getMaxSLvl();*/
     }
 
     public void ammoLvlBuy()
